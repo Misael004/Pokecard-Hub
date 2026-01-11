@@ -1,0 +1,75 @@
+# @PokéMaster - Revisor Global (Misael)
+# Supervisión total de la integridad del proyecto y aprobación final de despliegues.
+* @Misael004
+
+# --- BLOQUE 1: ARQUITECTURA Y CIMIENTOS ---
+
+# Brock: Estructura Raíz, Bootstrap y Layout maestro. (Tareas: 1, 2, 3, 4, 11)
+/src/css/abstracts/      @Misael004
+/src/css/layout/         @Misael004
+/.github/                @Misael004
+
+# Red: Diseño de Navbar y gestión de Favicons. (Tareas: 5, 12)
+/src/views/partials/_navbar.html @Red
+/src/assets/img/logo/            @Red
+
+# Lillie: Maquetación de Footer y configuración de Tipografía. (Tareas: 6, 13)
+/src/views/partials/_footer.html @Lillie
+/src/assets/fonts/               @Lillie
+
+# N: Estructura del Index y gestión de Contenedores principales. (Tareas: 7, 14)
+/src/index.html                  @N
+
+# Leon: Estructura de Cartas y Normalización de imágenes de la API. (Tareas: 8, 15)
+/src/views/pages/cartas.html     @Leon
+/src/assets/img/cards/           @Leon
+
+# Gary: Maquetación de sección Juegos y Skeletons de carga. (Tareas: 9, 16)
+/src/views/pages/juegos.html     @Gary
+
+# Ash: Estructura de Comunidad y diseño del Grid System. (Tareas: 10, 17)
+/src/views/pages/comunidad.html  @Ash
+
+# Cintia: Control del Estilo de Scroll y Meta-tags SEO. (Tareas: 18, 19)
+/package.json                    @Cintia
+/vite.config.js                  @Cintia
+
+# May: Auditoría final de enlaces y consistencia. (Tareas: 20)
+/README.md                       @May
+
+# --- BLOQUE 2: DISEÑO Y SECCIÓN DE CARTAS ---
+
+# Brock: Desarrollo del componente base Master Card (Responsive). (Tareas: 21, 27, 28, 32, 36)
+/src/css/components/master-card.css @Misael004
+
+# Red, Lillie, N, Leon, Gary: Lógica de interacción, efectos 3D y visuales de cartas. (Tareas: 22, 23, 24, 25, 26, 30, 31, 33, 34, 35)
+/src/js/components/card-logic/   @Red @Lillie @N @Leon @Gary
+
+# Ash: Interfaz de usuario del Buscador (Lupa). (Tareas: 29)
+/src/js/components/_search.js    @Ash
+
+# Cintia y May: Overlays de filtros, cartas relacionadas y micro-animaciones. (Tareas: 37, 38, 39, 40)
+/src/views/partials/_overlays.html @Cintia @May
+
+# --- BLOQUE 3: JUEGOS, COMUNIDAD Y REGISTRO ---
+
+# Brock: Lógica de Auth (Registro, Perfil) y gestión de errores 404. (Tareas: 41, 42, 43, 47, 60)
+/src/views/pages/auth/           @Misael004
+
+# Red, Lillie, N, Leon, Gary: Timeline de juegos, cards de consolas y sistema de comentarios. (Tareas: 44, 45, 46, 48, 49, 52, 53, 54, 55)
+/src/views/pages/juegos/         @Red @Lillie @N @Leon @Gary
+
+# Ash, Cintia y May: Notificaciones Toast, Efecto Parallax y Feed de noticias. (Tareas: 50, 51, 56, 57, 58, 59)
+/src/js/components/notifications/ @Ash @Cintia @May
+
+# --- BLOQUE 4: LÓGICA, PULIDO Y PREPARACIÓN API ---
+
+# Brock: Core JS, integración de API, limpieza de código y Deploy final. (Tareas: 63, 66, 70, 78, 80)
+/src/js/api/                     @Misael004
+/src/js/main.js                  @Misael004
+
+# Red, Lillie, N, Leon, Gary: Dark Mode, LocalStorage, animaciones de carga y accesibilidad. (Tareas: 61, 62, 64, 65, 67, 71, 72, 73, 74, 75)
+/src/js/utils/                   @Red @Lillie @N @Leon @Gary
+
+# Ash, Cintia y May: Lógica de candados, transiciones de página y documentación README. (Tareas: 68, 69, 76, 77, 79)
+/src/views/layouts/              @Ash @Cintia @May

@@ -1,0 +1,6 @@
+/* main.css */
+@import "./abstracts/variables.css";
+@import "./layout/grid.css";
+@import "./layout/navbar.css";
+@import "./components/cards.css";
+/* ... resto de importaciones */

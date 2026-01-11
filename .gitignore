@@ -1,0 +1,15 @@
+# Dependencias: No las subimos porque se generan con npm install
+node_modules/
+
+# Producción: No subimos el resultado final, solo el código fuente
+dist/
+
+# Archivos locales de cada entrenador (Configuraciones de VS Code)
+.vscode/
+
+# Archivos basura del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs de error (archivos que registran fallos técnicos)
+*.log

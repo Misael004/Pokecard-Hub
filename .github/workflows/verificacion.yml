@@ -1,0 +1,35 @@
+name: 🛡️ Control de Calidad PokéCard Hub
+
+# 1. Definimos CUÁNDO se ejecuta (Trigger)
+on:
+  push:
+    branches: [ main, master ] # Se activa al subir código a la rama principal
+  pull_request:
+    branches: [ main, master ] # Se activa cuando alguien pide unir su tarea
+
+# 2. Definimos QUÉ se hace (Jobs)
+jobs:
+  build-and-test:
+    name: Revisión de Cimientos y Compilación
+    runs-on: ubuntu-latest # Se ejecuta en un servidor virtual de Linux
+
+    steps:
+      # Paso A: Descargar el código del repositorio
+      - name: 📥 Clonando el repositorio
+        uses: actions/checkout@v4
+
+      # Paso B: Configurar el entorno de Node.js (necesario para Vite)
+      - name: 🟢 Configurando Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # Paso C: Instalar las dependencias de los entrenadores
+      - name: 📦 Instalando dependencias
+        run: npm install
+
+      # Paso D: Comprobar que el proyecto compila (Vite)
+      # Esto verifica que no haya errores de sintaxis en el Bloque 1
+      - name: 🏗️ Verificando compilación (Build)
+        run: npm run build
