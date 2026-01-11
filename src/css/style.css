@@ -1,0 +1,58 @@
+/* ADN Visual de PokéCard Hub */
+:root {
+    /* Colores de Marca */
+    --poke-red: #EE1515;
+    --poke-blue: #3B4CCA;
+    --poke-yellow: #FFDE00;
+    --poke-dark: #1A1A1A; /* Un poco más profundo para el estilo premium */
+    --poke-white: #FFFFFF;
+    
+    /* Efecto Especial de la Imagen (Degradado Marvel-Style) */
+    --footer-gradient: linear-gradient(180deg, #1A1A1A 0%, #330000 100%);
+
+    /* Colores Oficiales por Tipo (TCG) */
+    --type-grass: #7AC74C;
+    --type-fire: #EE8130;
+    --type-water: #6390F0;
+    --type-electric: #F7D02C;
+    --type-psychic: #F95587;
+    --type-ice: #96D9D6;
+    --type-dragon: #6F35FC;
+    --type-dark: #705746;
+    --type-fairy: #D685AD;
+    --type-normal: #A8A77A;
+    --type-fighting: #C22E28;
+    --type-flying: #A98FF3;
+    --type-poison: #A33EA1;
+    --type-ground: #E2BF65;
+    --type-rock: #B6A136;
+    --type-bug: #A8B820;
+    --type-ghost: #735797;
+    --type-steel: #B7B7CE;
+
+    /* Configuración de bordes y sombras */
+    --card-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    --holo-gradient: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.4) 100%);
+    
+    /* Tipografías */
+    --font-main: 'Montserrat', sans-serif;
+}
+
+/* Aplicación del degradado al Footer que creamos en la Tarea 3 */
+footer.bg-dark {
+    background: var(--footer-gradient) !important;
+}
+
+/* Clases de utilidad personalizadas */
+.text-poke-red { color: var(--poke-red); }
+.bg-poke-red { background-color: var(--poke-red); }
+.btn-pokemon {
+    background-color: var(--poke-red);
+    border: none;
+    color: white;
+    transition: 0.3s;
+}
+.btn-pokemon:hover {
+    background-color: var(--poke-blue);
+    transform: translateY(-2px);
+}
