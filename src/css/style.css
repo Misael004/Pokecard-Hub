@@ -4,9 +4,10 @@
     --poke-red: #EE1515;
     --poke-blue: #3B4CCA;
     --poke-yellow: #FFDE00;
-    --poke-dark: #1A1A1A; /* Un poco más profundo para el estilo premium */
+    --poke-dark: #1A1A1A;
+    /* Un poco más profundo para el estilo premium */
     --poke-white: #FFFFFF;
-    
+
     /* Efecto Especial de la Imagen (Degradado Marvel-Style) */
     --footer-gradient: linear-gradient(180deg, #1A1A1A 0%, #330000 100%);
 
@@ -31,11 +32,13 @@
     --type-steel: #B7B7CE;
 
     /* Configuración de bordes y sombras */
-    --card-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    --holo-gradient: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.4) 100%);
-    
+    --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --holo-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.4) 100%);
+
     /* Tipografías */
     --font-main: 'Montserrat', sans-serif;
+
+
 }
 
 /* Aplicación del degradado al Footer que creamos en la Tarea 3 */
@@ -44,15 +47,51 @@ footer.bg-dark {
 }
 
 /* Clases de utilidad personalizadas */
-.text-poke-red { color: var(--poke-red); }
-.bg-poke-red { background-color: var(--poke-red); }
+.text-poke-red {
+    color: var(--poke-red);
+}
+
+.bg-poke-red {
+    background-color: var(--poke-red);
+}
+
 .btn-pokemon {
     background-color: var(--poke-red);
     border: none;
     color: white;
     transition: 0.3s;
 }
+
 .btn-pokemon:hover {
     background-color: var(--poke-blue);
     transform: translateY(-2px);
+}
+
+@font-face {
+    font-family: 'PokemonSolid';
+    src: url('../../public/fonts/PokemonSolid.ttf.ttf') format('truetype');
+}
+
+h1 {
+    font-family: 'PokemonSolid', sans-serif;
+    color: var(--poke-yellow);
+    -webkit-text-stroke: 4px var(--poke-blue);
+    letter-spacing: 3px;
+
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
