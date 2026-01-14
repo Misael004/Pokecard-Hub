@@ -30,6 +30,6 @@ jobs:
         run: npm install
 
       # Paso D: Comprobar que el proyecto compila (Vite)
-      # Esto verifica que no haya errores de sintaxis en el Bloque 1
+      # Esto verifica que no haya errores de sintaxis
       - name: 🏗️ Verificando compilación (Build)
         run: npm run build
