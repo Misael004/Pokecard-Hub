@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PokéCard Hub - Catálogo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/src/css/stylecartas.css">
 </head>
 <body>
-
         <!-- Buscador -->
-        <section class="search-section py-5">
+        <div class="search-section py-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10 col-xl-8">
@@ -20,13 +19,13 @@
                             <span class="input-group-text bg-white border-0 ps-4">
                                 <i class="bi bi-search text-danger fs-5"></i>
                             </span>
-                            <input type="text" id="searchInput" class="form-control border-0" placeholder="Buscar por nombre, tipo o habilidad..."/>
+                            <input type="text" id="searchInput" class="form-control border-0" placeholder="Buscar por nombre, tipo o habilidad...">
                             <button class="btn btn-pokemon px-5 fw-bold" onclick="filterCards()">BUSCAR</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <!-- Main Content -->
         <div class="container my-5">
@@ -145,6 +144,7 @@
                         <div class="col pokemon-card" data-name="bulbasaur" data-type="planta" data-category="starter" data-region="kanto" data-power="75" data-number="001">
                             <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
                                 <div class="card-image-bg" style="background: linear-gradient(135deg, #78C850, #5AA03A);">
+                                    <img src="/src/assets/img/cards/bulbasaur.png" class="img-fluid w-100 h-100 object-fit-cover" alt="bulbasaur">
                                     <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🌟 INICIAL</span>
                                     <div class="card-info-overlay p-3">
                                         <div class="card-basic-info">
@@ -178,6 +178,7 @@
                         <div class="col pokemon-card" data-name="charmander" data-type="fuego" data-category="starter" data-region="kanto" data-power="82" data-number="004">
                             <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
                                 <div class="card-image-bg" style="background: linear-gradient(135deg, #F08030, #C85808);">
+                                    <img src="/src/assets/img/cards/charmander.png" class="img-fluid w-100 h-100 object-fit-cover" alt="charmander">
                                     <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🌟 INICIAL</span>
                                     <div class="card-info-overlay p-3">
                                         <div class="card-basic-info">
@@ -211,6 +212,7 @@
                         <div class="col pokemon-card" data-name="squirtle" data-type="agua" data-category="starter" data-region="kanto" data-power="65" data-number="007">
                             <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
                                 <div class="card-image-bg" style="background: linear-gradient(135deg, #6390F0, #4868C8);">
+                                    <img src="/src/assets/img/cards/squirtle.png" class="img-fluid w-100 h-100 object-fit-cover" alt="squirtle">
                                     <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🌟 INICIAL</span>
                                     <div class="card-info-overlay p-3">
                                         <div class="card-basic-info">
@@ -244,6 +246,7 @@
                         <div class="col pokemon-card" data-name="pikachu" data-type="electrico" data-category="hero" data-region="kanto" data-power="70" data-number="025">
                             <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
                                 <div class="card-image-bg" style="background: linear-gradient(135deg, #F7D02C, #D0A008);">
+                                    <img src="/src/assets/img/cards/pikachu.png" class="img-fluid w-100 h-100 object-fit-cover" alt="pikachu">
                                     <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🛡️ HÉROE</span>
                                     <div class="card-info-overlay p-3">
                                         <div class="card-basic-info">
@@ -277,6 +280,7 @@
                         <div class="col pokemon-card" data-name="mewtwo" data-type="psiquico" data-category="villain" data-region="kanto" data-power="95" data-number="150">
                             <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
                                 <div class="card-image-bg" style="background: linear-gradient(135deg, #F95587, #C03868);">
+                                    <img src="/src/assets/img/cards/mewtwo.png" class="img-fluid w-100 h-100 object-fit-cover" alt="mewtwo">
                                     <span class="badge badge-villain position-absolute top-0 end-0 m-3 shadow">⚡ VILLANO</span>
                                     <div class="card-info-overlay p-3">
                                         <div class="card-basic-info">
@@ -310,6 +314,7 @@
                         <div class="col pokemon-card" data-name="eevee" data-type="normal" data-category="hero" data-region="kanto" data-power="62" data-number="133">
                             <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
                                 <div class="card-image-bg" style="background: linear-gradient(135deg, #A8A77A, #787848);">
+                                    <img src="/src/assets/img/cards/eevee.png" class="img-fluid w-100 h-100 object-fit-cover" alt="eevee">
                                     <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🛡️ HÉROE</span>
                                     <div class="card-info-overlay p-3">
                                         <div class="card-basic-info">
