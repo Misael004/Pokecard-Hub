@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,100 @@
     <link rel="stylesheet" href="./public/css/bootstrap.min.css">
     <link rel="stylesheet" href="/src/css/style.css">
 </head>
-<body>
-    <div class="container mt-5">
-        <div class="alert alert-success text-center">
-            ¡Bootstrap 5 (CSS Puro) activado por Brock! 🪨
-        </div>
-        <button class="btn btn-primary">Prueba de Botón</button>
-    </div>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <main class="flex-grow-1">
+
+        <section id="hero" class="text-white py-5 d-flex align-items-center"
+            style="min-height: 70vh; background: var(--footer-gradient); border-bottom: 5px solid var(--poke-yellow);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h1 class="display-1 fw-bold mb-3" style="font-family: var(--font-titles);">
+                            Descubre el Poder <span class="text-danger">TCG</span>
+                        </h1>
+                        <p class="lead mb-4 text-secondary">
+                            La enciclopedia de cartas definitiva para el Maestro Entrenador moderno. Organiza tu mazo y
+                            domina el juego.
+                        </p>
+                        <div class="d-grid gap-3 d-md-flex justify-content-center justify-content-lg-start">
+                            <a href="/views/pages/cartas.html"
+                                class="btn btn-danger btn-lg px-5 fw-bold shadow-sm btn-pokemon">
+                                EXPLORAR CARTAS
+                            </a>
+                            <a href="/views/pages/juegos.html" class="btn btn-outline-light btn-lg px-5 fw-bold">
+                                VER JUEGOS
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-block text-center">
+                        <div class="p-5 border border-secondary border-dashed rounded-4 opacity-25"
+                            style="min-height: 400px;">
+                            <i class="bi bi-image fs-1 d-block mt-5"></i>
+                            <span class="small text-uppercase">Espacio para Arte de Expansión</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="destacados" class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-5" style="font-family: var(--font-titles);">EXPANSIONES RECIENTES</h2>
+                <hr class="mx-auto border-4 border-danger opacity-100" style="width: 80px;">
+                <p class="text-muted">Las últimas cartas añadidas a la base de datos oficial.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div
+                        class="p-5 border border-secondary border-dashed rounded-4 text-center text-muted bg-light shadow-sm">
+                        Slot de Carta 1
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div
+                        class="p-5 border border-secondary border-dashed rounded-4 text-center text-muted bg-light shadow-sm">
+                        Slot de Carta 2
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div
+                        class="p-5 border border-secondary border-dashed rounded-4 text-center text-muted bg-light shadow-sm">
+                        Slot de Carta 3
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div
+                        class="p-5 border border-secondary border-dashed rounded-4 text-center text-muted bg-light shadow-sm">
+                        Slot de Carta 4
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="callToAction" class="py-5 text-center bg-dark text-white">
+            <div class="container">
+
+                <h2 class="fw-bold mb-3">
+                    ¿Listo para convertirte en Maestro TCG?
+                </h2>
+
+                <p class="text-secondary mb-4">
+                    Explora cartas, expansiones y construye tu estrategia perfecta.
+                </p>
+
+                <a href="/views/pages/cartas.html" class="btn btn-outline-light btn-lg px-5 fw-bold ms-3">
+                    Explorar primero
+                </a>
+
+            </div>
+        </section>
+    </main>
 
     <script src="./public/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="./src/js/main.js"></script>
 </body>
-</body>
+
 </html>
