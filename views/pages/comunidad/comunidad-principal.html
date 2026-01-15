@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad - Pokémon TCG Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../styles/comunidad.css">
+</head>
+<body>
+
+    <!-- Header con logo -->
+    <header class="text-center py-5">
+        <div class="logo-container">
+            <h1 class="pokemon-title">Pokémon</h1>
+            <h2 class="community-title">COMMUNITY<br>HUB</h2>
+            <i class="bi bi-lightning-fill pikachu-icon"></i>
+        </div>
+    </header>
+
+    <!-- Pestañas de navegación -->
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-auto">
+                <button class="tab-btn active">
+                    <i class="bi bi-calendar-event"></i> EVENTS
+                </button>
+            </div>
+            <div class="col-auto">
+                <button class="tab-btn">
+                    <i class="bi bi-brush"></i> FAN ZONE
+                </button>
+            </div>
+            <div class="col-auto">
+                <button class="tab-btn">
+                    <i class="bi bi-chat-dots"></i> FORUMS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ESTRUCTURA PRINCIPAL DE 3 COLUMNAS -->
+    <div class="container my-4">
+        <div class="row g-4">
+            
+            <!-- COLUMNA 1: EVENTS -->
+            <div class="col-12 col-lg-4">
+                <div class="section-card events-card">
+                    <div class="section-header">
+                        <h3><i class="bi bi-calendar-event"></i> EVENTS</h3>
+                    </div>
+                    <div class="section-body">
+                        <!-- Evento 1 -->
+                        <div class="event-item">
+                            <div class="event-content">
+                                <h6>Online Tournament - Oct 20</h6>
+                                <p class="small">tournament nd meetups</p>
+                            </div>
+                            <div class="event-icon">
+                                <i class="bi bi-trophy-fill"></i>
+                            </div>
+                        </div>
+
+                        <!-- Evento 2 -->
+                        <div class="event-item">
+                            <div class="event-content">
+                                <h6>Local Meetup (Kanto Region) - Nov 25</h6>
+                                <p class="small">Kanto Region</p>
+                            </div>
+                            <div class="event-icon">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+                        </div>
+
+                        <!-- Evento 3 -->
+                        <div class="event-item">
+                            <div class="event-content">
+                                <h6>Shiny Hunting Competition</h6>
+                                <p class="small">Now 1</p>
+                            </div>
+                            <div class="event-icon">
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+
+                        <!-- Evento 4 -->
+                        <div class="event-item">
+                            <div class="event-content">
+                                <h6>Online Tournament -</h6>
+                                <p class="small">Nov 1</p>
+                            </div>
+                            <div class="event-icon">
+                                <i class="bi bi-controller"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA 2: FAN ZONE -->
+            <div class="col-12 col-lg-4">
+                <div class="section-card fanzone-card">
+                    <div class="section-header">
+                        <h3><i class="bi bi-brush"></i> FAN ZONE</h3>
+                    </div>
+                    <div class="section-body">
+                        <!-- Grid de imágenes de Pokémon -->
+                        <div class="pokemon-grid">
+                            <div class="pokemon-card">
+                                <div class="pokemon-img">
+                                    <i class="bi bi-water fs-1 text-info"></i>
+                                </div>
+                            </div>
+                            <div class="pokemon-card">
+                                <div class="pokemon-img">
+                                    <i class="bi bi-flower1 fs-1 text-success"></i>
+                                </div>
+                            </div>
+                            <div class="pokemon-card">
+                                <div class="pokemon-img">
+                                    <i class="bi bi-lightning-fill fs-1 text-warning"></i>
+                                </div>
+                            </div>
+                            <div class="pokemon-card">
+                                <div class="pokemon-img">
+                                    <i class="bi bi-fire fs-1 text-danger"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botón Submit -->
+                        <div class="text-center mt-3">
+                            <button class="submit-btn">
+                                <i class="bi bi-upload"></i> Submit Your Art!
+                            </button>
+                        </div>
+
+                        <!-- Botones inferiores -->
+                        <div class="row g-2 mt-3">
+                            <div class="col-6">
+                                <button class="action-btn">
+                                    <i class="bi bi-camera-fill"></i> Gallery
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button class="action-btn">
+                                    <i class="bi bi-trophy-fill"></i> Contest
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA 3: FORUMS -->
+            <div class="col-12 col-lg-4">
+                <div class="section-card forums-card">
+                    <div class="section-header">
+                        <h3><i class="bi bi-chat-dots"></i> FORUMS</h3>
+                    </div>
+                    <div class="section-body">
+                        <!-- Tema del foro 1 -->
+                        <div class="forum-item">
+                            <div class="forum-content">
+                                <h6>Gen IX Starter Predictions</h6>
+                                <p class="small text-muted">Sinnlona</p>
+                            </div>
+                            <div class="forum-avatar">
+                                <i class="bi bi-person-circle"></i>
+                            </div>
+                        </div>
+
+                        <!-- Tema del foro 2 -->
+                        <div class="forum-item">
+                            <div class="forum-content">
+                                <h6>Best Pokémon Game Ever?</h6>
+                                <p class="small text-muted">Trading Tips & Tricks</p>
+                            </div>
+                            <div class="forum-avatar">
+                                <i class="bi bi-person-circle"></i>
+                            </div>
+                        </div>
+
+                        <!-- Tema del foro 3 (más espacio) -->
+                        <div class="forum-item large">
+                            <div class="forum-content">
+                                <p class="small text-muted">More discussions...</p>
+                            </div>
+                        </div>
+
+                        <!-- Tema del foro 4 -->
+                        <div class="forum-item">
+                            <div class="forum-content">
+                                <h6>Trading Tips & Tricks</h6>
+                                <p class="small text-muted">Active now</p>
+                            </div>
+                            <div class="forum-avatar">
+                                <i class="bi bi-chat-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer con enlaces -->
+    <footer class="text-center py-4 mt-5">
+        <div class="footer-links">
+            <a href="#" class="footer-link">About Us</a>
+            <a href="#" class="footer-link">Rules</a>
+            <a href="#" class="footer-link">Rules</a>
+            <a href="#" class="footer-link">Contact</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

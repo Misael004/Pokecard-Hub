@@ -1,0 +1,347 @@
+/* ========================================
+   COMUNIDAD.CSS - Pokémon Community Hub
+   Estilo inspirado en la imagen de referencia
+   ======================================== */
+
+/* Fondo con efecto holográfico */
+body {
+    background: linear-gradient(135deg, 
+        #4a90e2 0%, 
+        #50c9c3 25%, 
+        #7fdbca 50%, 
+        #a8e6cf 75%, 
+        #dcedc1 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Overlay con patrón de líneas diagonales */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.05) 10px,
+        rgba(255, 255, 255, 0.05) 20px
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Container principal con z-index */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================================
+   HEADER Y LOGO
+   ======================================== */
+
+.logo-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.pokemon-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffcb05;
+    text-shadow: 
+        3px 3px 0 #3b4cca,
+        -1px -1px 0 #3b4cca,
+        1px -1px 0 #3b4cca,
+        -1px 1px 0 #3b4cca,
+        1px 1px 0 #3b4cca;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.community-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.pikachu-icon {
+    color: #ffcb05;
+    font-size: 2rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* ========================================
+   PESTAÑAS DE NAVEGACIÓN
+   ======================================== */
+
+.tab-btn {
+    background: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    color: #666;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
+}
+
+.tab-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #4a90e2, #50c9c3);
+    color: white;
+}
+
+.tab-btn i {
+    margin-right: 0.5rem;
+}
+
+/* ========================================
+   TARJETAS DE SECCIÓN
+   ======================================== */
+
+.section-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+/* Headers de las secciones con degradados diferentes */
+.section-header {
+    padding: 1.5rem;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.events-card .section-header {
+    background: linear-gradient(135deg, #4a90e2, #3b7bc4);
+}
+
+.fanzone-card .section-header {
+    background: linear-gradient(135deg, #50c9c3, #3da89f);
+}
+
+.forums-card .section-header {
+    background: linear-gradient(135deg, #7fdbca, #5cc4b0);
+}
+
+/* Cuerpo de las secciones */
+.section-body {
+    padding: 1.5rem;
+}
+
+/* ========================================
+   COLUMNA EVENTS
+   ======================================== */
+
+.event-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.event-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-content h6 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.event-content p {
+    margin: 0.25rem 0 0 0;
+    color: #666;
+}
+
+.event-icon {
+    font-size: 1.5rem;
+    color: #4a90e2;
+}
+
+/* ========================================
+   COLUMNA FAN ZONE
+   ======================================== */
+
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pokemon-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pokemon-img {
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    border-radius: 8px;
+    padding: 1rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #ffcb05, #ffa500);
+    border: none;
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.action-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(80, 201, 195, 0.5);
+    border-radius: 12px;
+    padding: 0.75rem;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.action-btn:hover {
+    background: white;
+    border-color: #50c9c3;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   COLUMNA FORUMS
+   ======================================== */
+
+.forum-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.forum-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forum-item.large {
+    min-height: 80px;
+}
+
+.forum-content h6 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.forum-content p {
+    margin: 0.25rem 0 0 0;
+}
+
+.forum-avatar {
+    font-size: 2rem;
+    color: #7fdbca;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 991px) {
+    .pokemon-title {
+        font-size: 2rem;
+    }
+    
+    .community-title {
+        font-size: 1.5rem;
+    }
+    
+    .tab-btn {
+        margin: 0.25rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
