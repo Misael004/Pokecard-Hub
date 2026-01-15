@@ -1,22 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokecard-Hub</title>
-    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/src/css/style.css">
-</head>
-<body>
-    <div class="container mt-5">
-        <div class="alert alert-success text-center">
-            ¡Bootstrap 5 (CSS Puro) activado por Brock! 🪨
-        </div>
-        <button class="btn btn-primary">Prueba de Botón</button>
-    </div>
+    <title>PokéCard Hub</title>
 
-    <script src="./public/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&family=Roboto:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <!-- CSS local -->
+    <link rel="stylesheet" href="./src/css/style.css">
+
+    <style>
+        /* Hover redes sociales y links */
+        .hover-link {
+            transition: transform 0.3s ease, color 0.3s ease;
+            display: inline-block;
+        }
+        .hover-link:hover {
+            color: #ffcb05 !important;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <!-- Header / Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center" href="./index.html">
+                    <span class="text-danger">Poké</span>Card Hub
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMain">
+                    <form class="d-flex mx-auto w-50 my-2 my-lg-0">
+                        <div class="input-group">
+                            <input type="search" class="form-control bg-secondary text-white border-0" placeholder="Buscar cartas, expansiones...">
+                            <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./views/pages/cartas.html">Cartas</a></li>
+                        <li class="nav-item me-3"><a class="nav-link" href="./views/pages/comunidad.html">Comunidad</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-light btn-sm me-2" href="./views/pages/auth/login.html">Login</a></li>
+                        <li class="nav-item"><a class="btn btn-danger btn-sm" href="./views/pages/auth/signup.html">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="flex-grow-1">
+        <div class="container py-5">
+            <div class="p-5 bg-white border rounded-3 text-center shadow-sm">
+                <h2 class="display-5 fw-bold">Bienvenido a PokéCard Hub</h2>
+                <p class="text-muted">Aquí puedes buscar, explorar y coleccionar cartas Pokémon.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Columna 1: Branding + Redes -->
+                <div class="col-12 col-md-4 text-center text-md-start mb-4">
+                    <h5 class="fw-bold text-warning" style="font-family: var(--font-main); letter-spacing: 2px;">POKÉCARD HUB</h5>
+                    <p class="text-secondary mt-3 small">La base de datos definitiva para coleccionistas de TCG Pokémon.</p>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-5 mt-3">
+                        <a href="https://www.facebook.com/Pokemon" target="_blank" class="text-white hover-link"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com/Pokemon" target="_blank" class="text-white hover-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com/pokemon/" target="_blank" class="text-white hover-link"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.youtube.com/user/pokemon" target="_blank" class="text-white hover-link"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Navegación -->
+                <div class="col-6 col-md-4 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-3 text-danger">Explora</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="./index.html" class="text-secondary text-decoration-none hover-link">Inicio</a></li>
+                        <li class="mb-2"><a href="https://www.cardmarket.com/es/Pokemon" class="text-secondary text-decoration-none hover-link">Catálogo</a></li>
+                        <li class="mb-2"><a href="./views/pages/juegos.html" class="text-secondary text-decoration-none hover-link">Historia</a></li>
+                        <li class="mb-2"><a href="https://pokemon.fandom.com/es/wiki/Pok%C3%A9mon_Wiki" class="text-secondary text-decoration-none hover-link">Comunidad</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Newsletter -->
+                <div class="col-6 col-md-4 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-3 text-warning">Newsletter</h6>
+                    <p class="text-secondary small">Recibe alertas sobre nuevas expansiones y cartas raras.</p>
+                    <div class="input-group mb-3 shadow-sm">
+                        <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="Tu email...">
+                        <button class="btn btn-danger fw-bold" type="button">¡IR!</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mt-4 mb-3 border-secondary opacity-25">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="text-secondary small mb-0">© 2026 PokéCard Hub. Pokémon es marca registrada de Nintendo/Game Freak.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <img src="./public/images/charmander.png" alt="Charmander" height="60">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS local -->
     <script type="module" src="./src/js/main.js"></script>
 </body>
-</body>
+
 </html>
