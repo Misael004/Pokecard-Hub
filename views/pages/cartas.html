@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>PokéCard Hub - Catálogo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/src/css/stylecartas.css">
+</head>
+<body>
+
+        <!-- Buscador -->
+        <section class="search-section py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-xl-8">
+                        <div class="input-group input-group-lg search-bar shadow-lg rounded-pill overflow-hidden border-0">
+                            <span class="input-group-text bg-white border-0 ps-4">
+                                <i class="bi bi-search text-danger fs-5"></i>
+                            </span>
+                            <input type="text" id="searchInput" class="form-control border-0" placeholder="Buscar por nombre, tipo o habilidad..."/>
+                            <button class="btn btn-pokemon px-5 fw-bold" onclick="filterCards()">BUSCAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="container my-5">
+            <div class="row">
+                <!-- Sidebar Filtros -->
+                <aside class="col-lg-3 mb-4">
+                    <div class="sidebar-card card border-0 shadow-lg rounded-4 sticky-md-top" style="top: 100px;">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-4 text-white">
+                                <i class="bi bi-funnel-fill me-2"></i>FILTROS
+                            </h5>
+
+                            <!-- Clasificación -->
+                            <div class="mb-4">
+                                <p class="small fw-bold text-uppercase border-bottom border-white border-opacity-25 pb-2 text-white-50">Clasificación</p>
+                                <select id="filterCategory" class="form-select form-select-sm shadow-sm" onchange="filterCards()">
+                                    <option value="">Todas las categorías</option>
+                                    <optgroup label="Rareza Especial">
+                                        <option value="legendary">🔱 Legendarios</option>
+                                        <option value="mythical">✨ Singulares (Mythical)</option>
+                                        <option value="ultrabeast">🌌 Ultraentes</option>
+                                    </optgroup>
+                                    <optgroup label="Estado en el Juego">
+                                        <option value="starter">🌟 Iniciales</option>
+                                        <option value="pseudo">🐉 Pseudo-Legendarios</option>
+                                        <option value="common">🍃 Comunes (Ruta)</option>
+                                    </optgroup>
+                                    <optgroup label="Especiales">
+                                        <option value="mega">🧬 Mega-Evolución</option>
+                                        <option value="gmax">🗻 Gigamax</option>
+                                        <option value="regional">🗺️ Formas Regionales</option>
+                                    </optgroup>
+                                    <optgroup label="Afiliación">
+                                        <option value="villain">⚡ Villano</option>
+                                        <option value="hero">🛡️ Héroe</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <!-- Tipos Pokémon -->
+                            <div class="mb-4">
+                                <p class="small fw-bold text-uppercase border-bottom border-white border-opacity-25 pb-2 text-white-50">Tipos Pokémon</p>
+                                <select id="filterType" class="form-select form-select-sm shadow-sm" onchange="filterCards()">
+                                    <option value="">Todos</option>
+                                    <option value="planta">🌿 Planta</option>
+                                    <option value="fuego">🔥 Fuego</option>
+                                    <option value="agua">💧 Agua</option>
+                                    <option value="electrico">⚡ Eléctrico</option>
+                                    <option value="psiquico">🔮 Psíquico</option>
+                                    <option value="hielo">❄️ Hielo</option>
+                                    <option value="dragon">🐲 Dragón</option>
+                                    <option value="siniestro">🌑 Siniestro</option>
+                                    <option value="hada">✨ Hada</option>
+                                    <option value="normal">⚪ Normal</option>
+                                    <option value="lucha">🥊 Lucha</option>
+                                    <option value="volador">🦅 Volador</option>
+                                    <option value="veneno">☠️ Veneno</option>
+                                    <option value="tierra">🏜️ Tierra</option>
+                                    <option value="roca">🪨 Roca</option>
+                                    <option value="bicho">🐞 Bicho</option>
+                                    <option value="fantasma">👻 Fantasma</option>
+                                    <option value="acero">⚙️ Acero</option>
+                                </select>
+                            </div>
+
+                            <!-- Generación / Región -->
+                            <div class="mb-4">
+                                <p class="small fw-bold text-uppercase border-bottom border-white border-opacity-25 pb-2 text-white-50">Generación / Región</p>
+                                <select id="filterRegion" class="form-select form-select-sm shadow-sm" onchange="filterCards()">
+                                    <option value="">Todas las regiones</option>
+                                    <optgroup label="Era Clásica">
+                                        <option value="kanto">Gen I — Kanto (Rojo/Azul)</option>
+                                        <option value="johto">Gen II — Johto (Oro/Plata)</option>
+                                        <option value="hoenn">Gen III — Hoenn (Rubí/Zafiro)</option>
+                                        <option value="sinnoh">Gen IV — Sinnoh (Diamante/Perla)</option>
+                                        <option value="unova">Gen V — Unova/Teselia (Negro/Blanco)</option>
+                                    </optgroup>
+                                    <optgroup label="Era Moderna">
+                                        <option value="kalos">Gen VI — Kalos (X/Y)</option>
+                                        <option value="alola">Gen VII — Alola (Sol/Luna)</option>
+                                        <option value="galar">Gen VIII — Galar (Espada/Escudo)</option>
+                                        <option value="paldea">Gen IX — Paldea (Escarlata/Púrpura)</option>
+                                    </optgroup>
+                                    <optgroup label="Especiales">
+                                        <option value="hisui">📜 Región de Hisui (Leyendas)</option>
+                                        <option value="unknown">❓ Desconocida / Otros</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <button class="btn btn-outline-light btn-sm w-100" onclick="clearFilters()">
+                                <i class="bi bi-x-circle me-2"></i>Limpiar Filtros
+                            </button>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Galería de Cards -->
+                <main class="col-lg-9">
+                    <!-- Header de resultados -->
+                    <div class="d-flex justify-content-between border align-items-center mb-4 p-3 bg-light rounded-3 shadow-sm">
+                        <p class="mb-0 fw-medium">
+                            Entrenador, hemos encontrado <span class="fw-bold fs-5 text-poke-red" id="resultCount">20</span> pokémons para ti.
+                        </p>
+                        <select class="form-select form-select-sm w-auto shadow-sm" id="sortSelect" onchange="sortCards()">
+                            <option value="">Ordenar por...</option>
+                            <option value="power">Poder más alto</option>
+                            <option value="number">Nº Pokédex</option>
+                            <option value="name">Nombre (A-Z)</option>
+                        </select>
+                    </div>
+
+                    <!-- Grid de Cards -->
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-4" id="cardsContainer">
+                        <!-- Card 1: Bulbasaur -->
+                        <div class="col pokemon-card" data-name="bulbasaur" data-type="planta" data-category="starter" data-region="kanto" data-power="75" data-number="001">
+                            <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                                <div class="card-image-bg" style="background: linear-gradient(135deg, #78C850, #5AA03A);">
+                                    <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🌟 INICIAL</span>
+                                    <div class="card-info-overlay p-3">
+                                        <div class="card-basic-info">
+                                            <h4 class="fw-bold mb-1 text-white">Bulbasaur</h4>
+                                            <p class="small opacity-75 mb-2">Nº 001 • Kanto</p>
+                                            <span class="type-badge rounded-pill" style="background: var(--type-grass);">Planta</span>
+                                        </div>
+                                        <div class="stats-summary mt-3">
+                                            <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-success" style="width: 75%"></div>
+                                            </div>
+                                            <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-info" style="width: 60%"></div>
+                                            </div>
+                                            <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                            <div class="progress mb-3" style="height: 5px;">
+                                                <div class="progress-bar bg-warning" style="width: 45%"></div>
+                                            </div>
+                                            <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill">
+                                                <i class="bi bi-info-circle me-1"></i> Ver Detalles
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Charmander -->
+                        <div class="col pokemon-card" data-name="charmander" data-type="fuego" data-category="starter" data-region="kanto" data-power="82" data-number="004">
+                            <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                                <div class="card-image-bg" style="background: linear-gradient(135deg, #F08030, #C85808);">
+                                    <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🌟 INICIAL</span>
+                                    <div class="card-info-overlay p-3">
+                                        <div class="card-basic-info">
+                                            <h4 class="fw-bold mb-1 text-white">Charmander</h4>
+                                            <p class="small opacity-75 mb-2">Nº 004 • Kanto</p>
+                                            <span class="type-badge rounded-pill" style="background: var(--type-fire);">Fuego</span>
+                                        </div>
+                                        <div class="stats-summary mt-3">
+                                            <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-danger" style="width: 82%"></div>
+                                            </div>
+                                            <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-info" style="width: 55%"></div>
+                                            </div>
+                                            <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                            <div class="progress mb-3" style="height: 5px;">
+                                                <div class="progress-bar bg-warning" style="width: 68%"></div>
+                                            </div>
+                                            <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill">
+                                                <i class="bi bi-info-circle me-1"></i> Ver Detalles
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Squirtle -->
+                        <div class="col pokemon-card" data-name="squirtle" data-type="agua" data-category="starter" data-region="kanto" data-power="65" data-number="007">
+                            <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                                <div class="card-image-bg" style="background: linear-gradient(135deg, #6390F0, #4868C8);">
+                                    <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🌟 INICIAL</span>
+                                    <div class="card-info-overlay p-3">
+                                        <div class="card-basic-info">
+                                            <h4 class="fw-bold mb-1 text-white">Squirtle</h4>
+                                            <p class="small opacity-75 mb-2">Nº 007 • Kanto</p>
+                                            <span class="type-badge rounded-pill" style="background: var(--type-water);">Agua</span>
+                                        </div>
+                                        <div class="stats-summary mt-3">
+                                            <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-primary" style="width: 65%"></div>
+                                            </div>
+                                            <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-info" style="width: 78%"></div>
+                                            </div>
+                                            <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                            <div class="progress mb-3" style="height: 5px;">
+                                                <div class="progress-bar bg-warning" style="width: 55%"></div>
+                                            </div>
+                                            <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill">
+                                                <i class="bi bi-info-circle me-1"></i> Ver Detalles
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Pikachu -->
+                        <div class="col pokemon-card" data-name="pikachu" data-type="electrico" data-category="hero" data-region="kanto" data-power="70" data-number="025">
+                            <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                                <div class="card-image-bg" style="background: linear-gradient(135deg, #F7D02C, #D0A008);">
+                                    <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🛡️ HÉROE</span>
+                                    <div class="card-info-overlay p-3">
+                                        <div class="card-basic-info">
+                                            <h4 class="fw-bold mb-1 text-white">Pikachu</h4>
+                                            <p class="small opacity-75 mb-2">Nº 025 • Kanto</p>
+                                            <span class="type-badge rounded-pill text-dark" style="background: var(--type-electric);">Eléctrico</span>
+                                        </div>
+                                        <div class="stats-summary mt-3">
+                                            <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                            </div>
+                                            <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-info" style="width: 50%"></div>
+                                            </div>
+                                            <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                            <div class="progress mb-3" style="height: 5px;">
+                                                <div class="progress-bar bg-warning" style="width: 90%"></div>
+                                            </div>
+                                            <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill">
+                                                <i class="bi bi-info-circle me-1"></i> Ver Detalles
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Mewtwo -->
+                        <div class="col pokemon-card" data-name="mewtwo" data-type="psiquico" data-category="villain" data-region="kanto" data-power="95" data-number="150">
+                            <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                                <div class="card-image-bg" style="background: linear-gradient(135deg, #F95587, #C03868);">
+                                    <span class="badge badge-villain position-absolute top-0 end-0 m-3 shadow">⚡ VILLANO</span>
+                                    <div class="card-info-overlay p-3">
+                                        <div class="card-basic-info">
+                                            <h4 class="fw-bold mb-1 text-white">Mewtwo</h4>
+                                            <p class="small opacity-75 mb-2">Nº 150 • Kanto</p>
+                                            <span class="type-badge rounded-pill text-white" style="background: var(--type-psychic);">Psíquico</span>
+                                        </div>
+                                        <div class="stats-summary mt-3">
+                                            <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-danger" style="width: 95%"></div>
+                                            </div>
+                                            <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-info" style="width: 88%"></div>
+                                            </div>
+                                            <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                            <div class="progress mb-3" style="height: 5px;">
+                                                <div class="progress-bar bg-warning" style="width: 92%"></div>
+                                            </div>
+                                            <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill">
+                                                <i class="bi bi-info-circle me-1"></i> Ver Detalles
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Eevee -->
+                        <div class="col pokemon-card" data-name="eevee" data-type="normal" data-category="hero" data-region="kanto" data-power="62" data-number="133">
+                            <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                                <div class="card-image-bg" style="background: linear-gradient(135deg, #A8A77A, #787848);">
+                                    <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🛡️ HÉROE</span>
+                                    <div class="card-info-overlay p-3">
+                                        <div class="card-basic-info">
+                                            <h4 class="fw-bold mb-1 text-white">Eevee</h4>
+                                            <p class="small opacity-75 mb-2">Nº 133 • Kanto</p>
+                                            <span class="type-badge rounded-pill text-white" style="background: var(--type-normal);">Normal</span>
+                                        </div>
+                                        <div class="stats-summary mt-3">
+                                            <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar" style="width: 62%; background: var(--type-normal);"></div>
+                                            </div>
+                                            <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                            <div class="progress mb-2" style="height: 5px;">
+                                                <div class="progress-bar bg-info" style="width: 58%"></div>
+                                            </div>
+                                            <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                            <div class="progress mb-3" style="height: 5px;">
+                                                <div class="progress-bar bg-warning" style="width: 72%"></div>
+                                            </div>
+                                            <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill">
+                                                <i class="bi bi-info-circle me-1"></i> Ver Detalles
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col pokemon-card" data-name="garchomp" data-type="dragon" data-category="pseudo" data-region="sinnoh" data-power="94" data-number="445">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #6D6E9C, #3D3E68);">
+                                  <span class="badge bg-primary position-absolute top-0 end-0 m-3 shadow">🐉 PSEUDO</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Garchomp</h4>
+                                          <p class="small opacity-75 mb-2">Nº 445 • Sinnoh</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-dragon);">Dragón</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 94%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 85%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 92%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="lucario" data-type="lucha" data-category="hero" data-region="sinnoh" data-power="88" data-number="448">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #448B95, #20383D);">
+                                  <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🛡️ HÉROE</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Lucario</h4>
+                                          <p class="small opacity-75 mb-2">Nº 448 • Sinnoh</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-fighting);">Lucha</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 88%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 70%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 85%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="rayquaza" data-type="dragon" data-category="legendary" data-region="hoenn" data-power="99" data-number="384">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #2D4F3E, #1A2E24);">
+                                  <span class="badge bg-dark position-absolute top-0 end-0 m-3 shadow">🔱 LEGENDARIO</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Rayquaza</h4>
+                                          <p class="small opacity-75 mb-2">Nº 384 • Hoenn</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-dragon);">Dragón</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 99%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 90%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 95%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="greninja" data-type="agua" data-category="hero" data-region="kalos" data-power="92" data-number="658">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #272E3F, #12161D);">
+                                  <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🛡️ HÉROE</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Greninja</h4>
+                                          <p class="small opacity-75 mb-2">Nº 658 • Kalos</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-water);">Agua</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 92%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 67%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 100%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="meowth" data-type="siniestro" data-category="regional" data-region="alola" data-power="45" data-number="052">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #705848, #49392F);">
+                                  <span class="badge bg-info position-absolute top-0 end-0 m-3 shadow">🗺️ REGIONAL</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Meowth (Alola)</h4>
+                                          <p class="small opacity-75 mb-2">Nº 052 • Alola</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-dark);">Siniestro</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 45%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 35%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 90%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="arceus" data-type="normal" data-category="mythical" data-region="sinnoh" data-power="100" data-number="493">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #E2E2E2, #A8A878);">
+                                  <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 shadow">✨ SINGULAR</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Arceus</h4>
+                                          <p class="small opacity-75 mb-2">Nº 493 • Sinnoh</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-normal);">Normal</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 100%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 100%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 100%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="gengar" data-type="fantasma" data-category="villain" data-region="kanto" data-power="88" data-number="094">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #4E3B66, #322541);">
+                                  <span class="badge badge-villain position-absolute top-0 end-0 m-3 shadow">⚡ VILLANO</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Gengar</h4>
+                                          <p class="small opacity-75 mb-2">Nº 094 • Kanto</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-ghost);">Fantasma</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 88%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 60%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 95%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="tyranitar" data-type="siniestro" data-category="pseudo" data-region="johto" data-power="95" data-number="248">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #5C6E41, #3B472A);">
+                                  <span class="badge bg-primary position-absolute top-0 end-0 m-3 shadow">🐉 PSEUDO</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Tyranitar</h4>
+                                          <p class="small opacity-75 mb-2">Nº 248 • Johto</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-dark);">Siniestro</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 95%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 95%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 61%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="kleavor" data-type="bicho" data-category="regional" data-region="hisui" data-power="85" data-number="900">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #E6C87C, #A8B820);">
+                                  <span class="badge bg-secondary position-absolute top-0 end-0 m-3 shadow">📜 HISUI</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Kleavor</h4>
+                                          <p class="small opacity-75 mb-2">Nº 900 • Hisui</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-bug);">Bicho</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 85%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 80%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 85%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="mew" data-type="psiquico" data-category="mythical" data-region="kanto" data-power="90" data-number="151">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #F95587, #D04470);">
+                                  <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 shadow">✨ SINGULAR</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Mew</h4>
+                                          <p class="small opacity-75 mb-2">Nº 151 • Kanto</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-psychic);">Psíquico</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 90%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 90%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 90%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="zoroark" data-type="normal" data-category="regional" data-region="hisui" data-power="85" data-number="571">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #E2E2E2, #7B2828);">
+                                  <span class="badge bg-info position-absolute top-0 end-0 m-3 shadow">🗺️ REGIONAL</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Zoroark (Hisui)</h4>
+                                          <p class="small opacity-75 mb-2">Nº 571 • Hisui</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-normal);">Normal</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 85%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 60%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 100%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="nihilego" data-type="veneno" data-category="ultrabeast" data-region="alola" data-power="90" data-number="793">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #A33EA1, #4A4A4A);">
+                                  <span class="badge bg-primary position-absolute top-0 end-0 m-3 shadow">🌌 ULTRAENTE</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Nihilego</h4>
+                                          <p class="small opacity-75 mb-2">Nº 793 • Alola</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-poison);">Veneno</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 90%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 85%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 100%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="torterra" data-type="planta" data-category="starter" data-region="sinnoh" data-power="85" data-number="389">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #4E8234, #2E4D1F);">
+                                  <span class="badge badge-hero position-absolute top-0 end-0 m-3 shadow">🌟 INICIAL</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Torterra</h4>
+                                          <p class="small opacity-75 mb-2">Nº 389 • Sinnoh</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-grass);">Planta</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-success" style="width: 85%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 95%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 40%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col pokemon-card" data-name="corviknight" data-type="acero" data-category="gmax" data-region="galar" data-power="88" data-number="823">
+                          <div class="pokemon-flashcard shadow-lg rounded-4 overflow-hidden position-relative">
+                              <div class="card-image-bg" style="background: linear-gradient(135deg, #4A516E, #2E3345);">
+                                  <span class="badge bg-danger position-absolute top-0 end-0 m-3 shadow">🗻 GIGAMAX</span>
+                                  <div class="card-info-overlay p-3">
+                                      <div class="card-basic-info">
+                                          <h4 class="fw-bold mb-1 text-white">Corviknight</h4>
+                                          <p class="small opacity-75 mb-2">Nº 823 • Galar</p>
+                                          <span class="type-badge rounded-pill" style="background: var(--type-steel);">Acero</span>
+                                      </div>
+                                      <div class="stats-summary mt-3">
+                                          <small class="d-block mb-1 text-white-50">⚡ Poder</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-danger" style="width: 88%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">🛡️ Defensa</small>
+                                          <div class="progress mb-2" style="height: 5px;"><div class="progress-bar bg-info" style="width: 95%"></div></div>
+                                          <small class="d-block mb-1 text-white-50">💨 Velocidad</small>
+                                          <div class="progress mb-3" style="height: 5px;"><div class="progress-bar bg-warning" style="width: 75%"></div></div>
+                                          <button class="btn btn-outline-light btn-sm w-100 mt-2 rounded-pill"><i class="bi bi-info-circle me-1"></i> Ver Detalles</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
