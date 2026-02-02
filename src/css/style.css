@@ -56,3 +56,29 @@ footer.bg-dark {
     background-color: var(--poke-blue);
     transform: translateY(-2px);
 }
+
+/*redes sociales*/
+
+.hover-link {
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.hover-link:hover {
+    transform: scale(1.02);
+}
+
+/*Navegación*/
+
+.list-unstyled li {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.list-unstyled li:hover {
+    transform: scale(1.04); 
+    color: white;
+}
+
+.list-unstyled li:hover a {
+    color: white !important /*lo tenia sin important y no funcionaba le pedi a chatgpt ayuda y me dijo que le ponga eso y funciono*/;
+}
