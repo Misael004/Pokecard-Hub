@@ -43,18 +43,20 @@
 
 /* Nombres de las cartas */
 .card-name {
-  font-family: 'Orbitron', sans-serif; /* parecido a Futura Extra Bold */
-  font-weight: 700;
-  font-size: 1.5rem;
-  text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+    /* parecido a Futura Extra Bold */
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }
 
 /* Descripciones, ataques y textos secundarios */
 .card-text {
-  font-family: 'Roboto', sans-serif; /* parecido a Trade Gothic/Helvetica */
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.3;
+    font-family: 'Roboto', sans-serif;
+    /* parecido a Trade Gothic/Helvetica */
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.3;
 }
 
 /* Aplicación del degradado al Footer que creamos en la Tarea 3 */
@@ -83,45 +85,184 @@ footer.bg-dark {
     transform: translateY(-2px);
 }
 
-html, body {
-    height: 100%;
+
+/* =========================================
+   CONFIGURACIÓN BASE Y REVEAL
+   ========================================= */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    background: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.footer-reveal {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    /* Reducimos la altura mínima para que no sea tan gigante */
+    min-height: 300px;
+    overflow: hidden;
+    background: linear-gradient(rgba(20, 20, 20, 0.85),
+            rgba(20, 20, 20, 0.85)),
+        url('../assets/fonts/fondo-footer.jpg') no-repeat center center;
+    background-size: cover;
+    color: #ffffff !important;
+}
+
+/* Ajuste del padding de Bootstrap para reducir altura total */
+.footer-reveal .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+}
+
+/* =========================================
+   SECCIÓN EXPLORA (EN COLUMNA)
+   ========================================= */
+.footer-reveal .list-unstyled {
+    display: block !important;
+    /* Volvemos a diseño de columna */
+    padding: 0;
     margin: 0;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
+.footer-reveal .list-unstyled li {
+    display: block !important;
+    margin-bottom: 8px !important;
+    /* Espaciado entre enlaces */
 }
-
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-
-/*redes sociales*/
 
 .hover-link {
-    transition: transform 0.3s ease, color 0.3s ease;
-    display: inline-block;
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0.8;
 }
 
 .hover-link:hover {
-    transform: scale(1.02);
+    color: #ffae00 !important;
+    /* Brillo naranja al pasar el mouse */
+    text-shadow: 0 0 10px rgba(255, 174, 0, 0.5);
+    opacity: 1;
+    padding-left: 5px;
+    /* Pequeño efecto de desplazamiento */
 }
 
-/*Navegación*/
-
-.list-unstyled li {
-    transition: transform 0.3s ease, color 0.3s ease;
+/* =========================================
+   CHARIZARD Y NEWSLETTER
+   ========================================= */
+.charizard-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
 }
 
-.list-unstyled li:hover {
-    transform: scale(1.04); 
-    color: white;
+.charizard-gif-free {
+    /* Tamaño optimizado para no estirar el footer */
+    width: 250px !important;
+    height: auto !important;
+    filter: drop-shadow(0 0 10px rgba(238, 21, 21, 0.4));
+    animation: float 4s ease-in-out infinite;
 }
 
-.list-unstyled li:hover a {
-    color: white !important /*lo tenia sin important y no funcionaba le pedi a chatgpt ayuda y me dijo que le ponga eso y funciono*/;
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* =========================================
+   ANIMACIÓN DE FUEGO (LLAMAS)
+   ========================================= */
+.fire-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.flame {
+    position: absolute;
+    bottom: -60px;
+    background: linear-gradient(0deg, #EE1515 0%, #d85d10 70%, transparent 100%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50% 0 50% 50%;
+    filter: blur(10px);
+    opacity: 0.5;
+    animation: rise-fire 8s infinite ease-out;
+    transform: rotate(-45deg);
+}
+
+/* Distribución de las llamas */
+.flame:nth-child(1) {
+    left: 5%;
+    animation-duration: 7s;
+}
+
+.flame:nth-child(2) {
+    left: 25%;
+    animation-duration: 10s;
+    animation-delay: 1s;
+}
+
+.flame:nth-child(3) {
+    left: 45%;
+    animation-duration: 8s;
+}
+
+.flame:nth-child(4) {
+    left: 65%;
+    animation-duration: 11s;
+    animation-delay: 2s;
+}
+
+.flame:nth-child(5) {
+    left: 85%;
+    animation-duration: 9s;
+}
+
+@keyframes rise-fire {
+    0% {
+        transform: translateY(0) rotate(-45deg) scale(1);
+        opacity: 0.5;
+    }
+
+    30% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-400px) rotate(-45deg) scale(2);
+        opacity: 0;
+    }
+}
+
+/* =========================================
+   AJSUTES FINALES
+   ========================================= */
+.footer-reveal hr {
+    margin: 1rem 0 !important;
+}
+
+.footer-reveal h5,
+.footer-reveal h6 {
+    margin-bottom: 1rem !important;
+    letter-spacing: 1px;
 }
