@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeCard Hub - Maestro</title>
+    <link rel="stylesheet" href="../../src/css/footer.css">
+    <link rel="stylesheet" href="../../src/css/main-juegos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+            <div class="container"> <a class="navbar-brand fw-bold d-flex align-items-center" href="/index.html"> <span
+                        class="text-danger">Poké</span>Card Hub </a> <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navMain"> <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMain">
+                    <form class="d-flex mx-auto w-50 my-2 my-lg-0">
+                        <div class="input-group"> <input type="search"
+                                class="form-control bg-secondary text-white border-0"
+                                placeholder="Buscar cartas, expansiones..."> <button class="btn btn-danger"
+                                type="submit"><i class="bi bi-search"></i></button> </div>
+                    </form>
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/views/pages/cartas.html">Cartas</a></li>
+                        <li class="nav-item me-3"><a class="nav-link" href="/views/pages/comunidad.html">Comunidad</a>
+                        </li>
+                        <li class="nav-item"><a class="btn btn-outline-light btn-sm me-2"
+                                href="/views/pages/auth/login.html">Login</a></li>
+                        <li class="nav-item"><a class="btn btn-danger btn-sm" href="/views/pages/auth/signup.html">Sign
+                                Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="min-height: 100vh; background: white; display: flex; align-items: center; justify-content: center;">
+        <div class="content-wrapper">
+            <div class="container text-center">
+                <h1 class="display-3 fw-bold">PokéCard Hub</h1>
+                <p class="lead">Desliza hacia abajo para descubrir el poder del fuego...</p>
+                <div class="mt-4">
+                    <i class="bi bi-chevron-double-down fs-1 text-danger"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-reveal">
+        <div class="fire-animation">
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+        </div>
+
+        <div class="container position-relative py-4" style="z-index: 10;">
+            <div class="row">
+
+                <div class="col-12 col-md-4 text-center text-md-start mb-3" data-aos="fade-right">
+                    <h6 class="fw-bold text-warning mb-2" style="letter-spacing: 2px;">POKÉCARD HUB</h6>
+                    <p class="small mb-2">La base de datos definitiva para coleccionistas de TCG Pokémon.</p>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-6">
+                        <a href="#" class="hover-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="hover-link"><i class="bi bi-x"></i></a>
+                        <a href="#" class="hover-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="hover-link"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 mb-3 text-center text-md-start" data-aos="fade-up">
+                    <h6 class="text-uppercase fw-bold mb-2 text-danger">Explora</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="./index.html" class="text-decoration-none hover-link small">Inicio</a></li>
+                        <li><a href="#" class="text-decoration-none hover-link small">Cards</a></li>
+                        <li><a href="#" class="text-decoration-none hover-link small">Games</a></li>
+                        <li><a href="#" class="text-decoration-none hover-link small">Community</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-4 mb-3 text-center text-md-start" data-aos="fade-left">
+                    <h6 class="text-uppercase fw-bold mb-1 text-warning">Newsletter</h6>
+                    <p class="small mb-2 opacity-75" style="font-size: 0.8rem;">
+                        Recibe alertas sobre nuevas expansiones y cartas raras.
+                    </p>
+                    <div class="input-group input-group-sm mb-2 shadow-sm">
+                        <input type="email" class="form-control bg-dark text-white border-secondary"
+                            placeholder="Tu email...">
+                        <button class="btn btn-danger btn-sm fw-bold" type="button">¡IR!</button>
+                    </div>
+                    <div class="charizard-container">
+                        <img src="../../src/assets/gif/charizard-footer.gif" alt="Charizard" class="charizard-gif-free">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-2 border-secondary opacity-25">
+            <div class="text-center">
+                <p class="mb-0 opacity-50" style="font-size: 0.75rem;">
+                    © 2026 <b>PokéCard Hub</b> | Pokémon y personajes son marcas de Nintendo/Game Freak.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>
