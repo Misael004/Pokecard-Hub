@@ -82,3 +82,36 @@ footer.bg-dark {
 .list-unstyled li:hover a {
     color: white !important /*lo tenia sin important y no funcionaba le pedi a chatgpt ayuda y me dijo que le ponga eso y funciono*/;
 }
+
+/* ─── Scroll Personalizado · Campeona Cintia 🏛️ ─── */
+/* Inspirado en el estilo elegante y firme de la región de Sinnoh */
+
+/* Webkit: Chrome, Edge, Brave, Safari */
+::-webkit-scrollbar {
+  width: 8px; /* más fino = más elegante */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--poke-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--poke-red),
+    var(--poke-dark)
+  );
+  border-radius: 12px;
+  border: 2px solid var(--poke-light);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--poke-dark);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--poke-red) var(--poke-light);
+}
