@@ -71,8 +71,103 @@
                         <h5 class="fw-bold mb-4 text-white">
                             <i class="bi bi-funnel-fill me-2"></i>FILTROS
                         </h5>
+                        <!-- FILTROS AVANZADOS (Bootstrap Accordion) -->
+                        <div class="accordion shadow-sm border-0 rounded-4 overflow-hidden" id="accordionFiltros">
 
-                        <!-- Clasificación -->
+                            <!-- FILTRO: TIPO DE ENERGÍA -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTipos">
+                                    <button class="accordion-button fw-bold text-danger bg-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseTipos" aria-expanded="true"
+                                        aria-controls="collapseTipos">
+                                        <i class="bi bi-lightning-charge me-2"></i> TIPO DE ENERGÍA
+                                    </button>
+                                </h2>
+
+                                <div id="collapseTipos" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingTipos" data-bs-parent="#accordionFiltros">
+                                    <div class="accordion-body">
+
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="tipoFuego" checked>
+                                            <label class="form-check-label small" for="tipoFuego">Fuego 🔥</label>
+                                        </div>
+
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="tipoAgua">
+                                            <label class="form-check-label small" for="tipoAgua">Agua 💧</label>
+                                        </div>
+
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="tipoPlanta">
+                                            <label class="form-check-label small" for="tipoPlanta">Planta 🌿</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FILTRO: RAREZA -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingRareza">
+                                    <button class="accordion-button collapsed fw-bold text-danger bg-white"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseRareza"
+                                        aria-expanded="false" aria-controls="collapseRareza">
+                                        <i class="bi bi-gem me-2"></i> RAREZA
+                                    </button>
+                                </h2>
+
+                                <div id="collapseRareza" class="accordion-collapse collapse"
+                                    aria-labelledby="headingRareza" data-bs-parent="#accordionFiltros">
+                                    <div class="accordion-body">
+
+                                        <select id="filtroRareza" class="form-select form-select-sm border-2 rounded-3">
+                                            <option selected>Todas las rarezas</option>
+                                            <option>Común</option>
+                                            <option>Infrecuente</option>
+                                            <option>Rara Holo</option>
+                                            <option>Ultra Rara</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FILTRO: GENERACIÓN -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingGen">
+                                    <button class="accordion-button collapsed fw-bold text-danger bg-white"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseGen"
+                                        aria-expanded="false" aria-controls="collapseGen">
+                                        <i class="bi bi-clock-history me-2"></i> GENERACIÓN
+                                    </button>
+                                </h2>
+
+                                <div id="collapseGen" class="accordion-collapse collapse" aria-labelledby="headingGen"
+                                    data-bs-parent="#accordionFiltros">
+                                    <div class="accordion-body">
+
+                                        <input type="range" class="form-range" min="1" max="9" id="genRange">
+
+                                        <div class="d-flex justify-content-between small text-muted">
+                                            <span>Gen I</span>
+                                            <span>Gen IX</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- BOTÓN LIMPIAR -->
+                        <div class="d-grid mt-4">
+                            <button class="btn btn-outline-secondary btn-sm rounded-pill fw-bold">
+                                <i class="bi bi-arrow-counterclockwise"></i> LIMPIAR FILTROS
+                            </button>
+                        </div>
+
+                        <!-- Clasificación 
                         <div class="mb-4">
                             <p
                                 class="small fw-bold text-uppercase border-bottom border-white border-opacity-25 pb-2 text-white-50">
@@ -102,7 +197,7 @@
                             </select>
                         </div>
 
-                        <!-- Tipos Pokémon -->
+                        Tipos Pokémon 
                         <div class="mb-4">
                             <p
                                 class="small fw-bold text-uppercase border-bottom border-white border-opacity-25 pb-2 text-white-50">
@@ -131,7 +226,7 @@
                             </select>
                         </div>
 
-                        <!-- Generación / Región -->
+                         Generación / Región 
                         <div class="mb-4">
                             <p
                                 class="small fw-bold text-uppercase border-bottom border-white border-opacity-25 pb-2 text-white-50">
@@ -163,7 +258,7 @@
                             <i class="bi bi-x-circle me-2"></i>Limpiar Filtros
                         </button>
                     </div>
-                </div>
+                </div> -->
             </aside>
             <main
                 style="min-height: 100vh; background: white; display: flex; align-items: center; justify-content: center;">
