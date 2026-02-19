@@ -1,0 +1,166 @@
+/* =========================================
+   ADN VISUAL: INFINITY POKEDEX
+   ========================================= */
+:root {
+    --poke-red: #EE1515;
+    --poke-link-blue: #00CCFF;
+    --poke-yellow: #FFDE00;
+    --poke-dark: #1A1A1A;
+    --poke-white: #FFFFFF;
+    --font-titles: 'Orbitron', sans-serif;
+    --font-main: 'Montserrat', sans-serif;
+}
+
+/* =========================================
+   ESTRUCTURA DEL FOOTER (SOLUCIÓN AL BLANCO)
+   ========================================= */
+.footer-reveal {
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+    overflow: hidden;
+    /* Fondo con imagen y degradado */
+    background: linear-gradient(rgba(20, 20, 20, 0.8), rgba(20, 20, 20, 0.9)),
+        url('../../assets/fonts/fondo-footer.jpg') no-repeat center center;
+    background-size: cover;
+    color: var(--poke-white) !important;
+
+    /* Estado inicial: Casi invisible y desplazado */
+    opacity: 0.1;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    z-index: 10;
+}
+
+/* Esta clase la activa el JavaScript al llegar con el scroll */
+.footer-reveal.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* =========================================
+   COLORES Y TIPOGRAFÍAS (UNIFICADOS)
+   ========================================= */
+
+/* Título de Marca (Amarillo) */
+.footer-reveal h6.text-warning {
+    color: var(--poke-yellow) !important;
+    font-family: var(--font-titles);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Títulos EXPLORA y SUPPORT (Rojo idéntico) */
+.footer-reveal h6.text-danger {
+    color: var(--poke-red) !important;
+    font-family: var(--font-titles);
+    font-weight: 600;
+}
+
+/* Enlaces (Azul Cian) */
+.footer-reveal .list-unstyled li a {
+    color: var(--poke-link-blue) !important;
+    text-decoration: none;
+    font-family: var(--font-main);
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.footer-reveal .list-unstyled li a:hover {
+    color: var(--poke-yellow) !important;
+    transform: translateX(8px);
+    text-shadow: 0 0 8px rgba(0, 204, 255, 0.6);
+}
+
+/* =========================================
+   ANIMACIÓN DE FUEGO (LAS 5 LLAMAS)
+   ========================================= */
+.fire-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.flame {
+    position: absolute;
+    bottom: -60px;
+    background: linear-gradient(0deg, var(--poke-red) 0%, #d85d10 70%, transparent 100%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50% 0 50% 50%;
+    filter: blur(10px);
+    opacity: 0.5;
+    animation: rise-fire 8s infinite ease-out;
+    transform: rotate(-45deg);
+}
+
+/* Distribución horizontal de las llamas */
+.flame:nth-child(1) {
+    left: 5%;
+    animation-duration: 7s;
+}
+
+.flame:nth-child(2) {
+    left: 25%;
+    animation-duration: 10s;
+    animation-delay: 1s;
+}
+
+.flame:nth-child(3) {
+    left: 45%;
+    animation-duration: 8s;
+}
+
+.flame:nth-child(4) {
+    left: 65%;
+    animation-duration: 11s;
+    animation-delay: 2s;
+}
+
+.flame:nth-child(5) {
+    left: 85%;
+    animation-duration: 9s;
+}
+
+@keyframes rise-fire {
+    0% {
+        transform: translateY(0) rotate(-45deg) scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-400px) rotate(-45deg) scale(2);
+        opacity: 0;
+    }
+}
+
+/* =========================================
+   CHARIZARD Y EXTRAS
+   ========================================= */
+.charizard-gif-free {
+    width: 220px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(238, 21, 21, 0.6));
+    animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Línea divisoria suave */
+.footer-reveal hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 1.5rem 0;
+}
