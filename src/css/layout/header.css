@@ -1,0 +1,34 @@
+.header-pokemon {
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #dc3545;
+    /* COLOR DE FONDO OSCURO: Esto es lo que hará que la foto se vea opaca */
+    background-color: #000; 
+}
+
+.header-pokemon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/fonts/fondo-heaader2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    /* OPACIDAD: 0.3 significa que solo verás el 30% de la foto, el resto será el fondo negro */
+    opacity: 0.4; 
+    z-index: 1;
+}
+
+/* Forzamos que el contenido sea blanco para que resalte sobre el fondo oscurecido */
+.navbar {
+    width: 100%;
+    z-index: 2;
+}
+
+.nav-link, .navbar-brand {
+    color: white !important;
+}
