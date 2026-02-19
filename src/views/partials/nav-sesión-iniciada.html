@@ -14,38 +14,73 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-light">
-
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-            <div class="container">
-                <a class="navbar-brand fw-bold d-flex align-items-center" href="/index.html">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-2">
+        <div class="container-fluid px-4">
+            <div class="navbar-brand-container" style="flex: 1;">
+                <a class="navbar-brand fw-bold d-flex align-items-center m-0" href="/index.html">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" 
+                         alt="Pokeball" width="28" height="28" class="me-2">
                     <span class="text-danger">Infinity</span>&nbsp;Pokedex
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navMain">
-                    <form class="d-flex mx-auto w-50 my-2 my-lg-0">
-                        <div class="input-group">
-                            <input type="search" class="form-control bg-secondary text-white border-0"
-                                placeholder="Buscar cartas, expansiones...">
-                            <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navMain" style="flex: 2;">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-medium" href="/views/pages/cartas.html">Cartas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-medium" href="/views/pages/juegos.html">Juegos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-medium" href="/views/pages/comunidad.html">Comunidad</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-end gap-3" style="flex: 1;">
+                <form class="d-none d-xl-flex">
+                    <div class="input-group input-group-sm">
+                        <input type="search" class="form-control bg-secondary text-white border-0" 
+                               placeholder="Buscar..." style="width: 140px;">
+                        <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+                    </div>
+                </form>
+
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-link text-white position-relative p-1">
+                        <i class="bi bi-bookmark-star fs-5 text-warning"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" style="font-size: 0.6rem;">12</span>
+                    </button>
+                    <button class="btn btn-link text-white position-relative p-1">
+                        <i class="bi bi-bell fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">3</span>
+                    </button>
+                </div>
+
+                <div class="dropdown border-start ps-3">
+                    <a class="nav-link p-0" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                        <div class="rounded-circle bg-info d-flex align-items-center justify-content-center text-white fw-bold shadow-sm" 
+                             style="width: 35px; height: 35px;">
+                            AU
                         </div>
-                    </form>
-                    <ul class="navbar-nav align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/views/pages/cartas.html">Cartas</a></li>
-                        <li class="nav-item me-3"><a class="nav-link" href="/views/pages/comunidad.html">Comunidad</a>
-                        </li>
-                        <li class="nav-item"><a class="btn btn-outline-light btn-sm me-2"
-                                href="/views/pages/auth/login.html">Login</a></li>
-                        <li class="nav-item"><a class="btn btn-danger btn-sm" href="/views/pages/auth/signup.html">Sign
-                                Up</a></li>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Mi Perfil</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Ajustes</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i>Salir</a></li>
                     </ul>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
     <main
         style="min-height: 110vh; background: white; position: relative; z-index: 2; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
