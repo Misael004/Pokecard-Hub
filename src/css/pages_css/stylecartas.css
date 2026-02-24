@@ -221,3 +221,9 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
+
+.main-pokemon-bg {
+    background-image: url('../../assets/fonts/fondo-grass.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed; /* Esto da un efecto elegante al hacer scroll */
+}
