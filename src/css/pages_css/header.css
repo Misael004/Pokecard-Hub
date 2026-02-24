@@ -1,0 +1,80 @@
+/* =========================================
+   ESTILOS DE LOGO Y TEXTO (BRILLO)
+   ========================================= */
+
+/* Estilo para Infinity y Menú (Blanco con resplandor rojo) */
+.logo-infinity,
+.nav-link.logo-infinity {
+    color: #ffffff !important;
+    text-shadow:
+        0 0 5px #ff0000,
+        0 0 10px #ff0000,
+        0 0 20px #ff0000;
+    transition: 0.3s;
+    position: relative;
+    z-index: 3;
+}
+
+/* Estilo para Pokedex (Rojo con resplandor rojo intenso) */
+.logo-pokedex {
+    color: #ff0000 !important;
+    text-shadow:
+        0 0 5px #ff0000,
+        0 0 15px #ff0000,
+        0 0 25px #ff0000;
+}
+
+/* Efecto hover para el menú */
+.nav-link.logo-infinity:hover {
+    text-shadow:
+        0 0 10px #ff0000,
+        0 0 30px #ff0000;
+    transform: scale(1.05);
+}
+
+/* =========================================
+   ESTILOS DEL HEADER (FONDO Y NUBES)
+   ========================================= */
+
+.header-pokemon {
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #dc3545;
+    /* Fondo oscuro de seguridad por si la imagen falla */
+    background-color: #0056b3;
+    background-image: url('../../assets/fonts/fondo-header.png');
+    overflow: visible; 
+    z-index: 1000;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-pokemon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    /* La opacidad ahora se maneja dentro del rgba del gradiente */
+    z-index: 1;
+}
+
+/* Contenedor del Navbar por encima del fondo */
+.navbar {
+    width: 100%;
+    z-index: 2;
+    position: relative;
+}
+
+/* Ajuste para Zapdos y botones para asegurar visibilidad */
+.header-pokemon img,
+.header-pokemon .btn {
+    position: relative;
+    z-index: 3;
+}
