@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokecard-Hub</title>
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <main class="flex-grow-1">
+
+        <section id="hero" class="text-white py-5 d-flex align-items-center"
+            style="min-height: 70vh; background: var(--footer-gradient); border-bottom: 5px solid var(--poke-yellow);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h1 class="display-1 fw-bold mb-3" style="font-family: var(--font-titles);">
+                            Descubre el Poder <span class="text-danger">TCG</span>
+                        </h1>
+                        <p class="lead mb-4 text-secondary">
+                            La enciclopedia de cartas definitiva para el Maestro Entrenador moderno. Organiza tu mazo y
+                            domina el juego.
+                        </p>
+                        <div class="d-grid gap-3 d-md-flex justify-content-center justify-content-lg-start">
+                            <a href="/views/pages/cartas.html"
+                                class="btn btn-danger btn-lg px-5 fw-bold shadow-sm btn-pokemon">
+                                EXPLORAR CARTAS
+                            </a>
+                            <a href="/views/pages/juegos.html" class="btn btn-outline-light btn-lg px-5 fw-bold">
+                                VER JUEGOS
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-block text-center">
+                        <div class="p-5 border border-secondary border-dashed rounded-4 opacity-25"
+                            style="min-height: 400px;">
+                            <i class="bi bi-image fs-1 d-block mt-5"></i>
+                            <span class="small text-uppercase">Espacio para Arte de Expansión</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <div
+                class="p-4 p-md-5 mb-4 rounded-4 text-body-emphasis bg-white shadow-lg border-start border-5 border-danger position-relative overflow-hidden">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-bold" style="font-family: var(--font-titles);">
+                            Novedad: Expansión <span class="text-danger">Escarlata y Púrpura</span>
+                        </h2>
+                        <p class="lead my-3">
+                            Descubre las nuevas cartas "Pokémon EX" que están redefiniendo el juego competitivo.
+                            ¡Actualizamos nuestra base de datos con las últimas rarezas!
+                        </p>
+                        <p class="mb-0">
+                            <a href="/views/pages/cartas.html"
+                                class="text-danger fw-bold text-decoration-none hover-link"
+                                aria-label="Explorar cartas de la expansión Escarlata y Púrpura">
+                                Explorar la colección completa →
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <i class="bi bi-patch-check position-absolute end-0 bottom-0 text-light opacity-10"
+                    style="font-size: 10rem; margin-right: -2rem; margin-bottom: -2rem;"></i>
+            </div>
+        </section>
+
+        <section class="py-5" style="background-color: #f8f9fa;">
+            <div class="container">
+                <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+
+                    <div class="feature col text-center">
+                        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-white fs-2 mb-4 bg-danger rounded-circle shadow-sm" style="width: 80px; height: 80px;">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <h3 class="fs-4 fw-bold" style="font-family: var(--font-titles);">Búsqueda Avanzada</h3>
+                        <p class="text-secondary small px-md-4">
+                            Encuentra cualquier carta filtrando por tipo, rareza, expansión o generación en cuestión de
+                            segundos.
+                        </p>
+                    </div>
+
+                    <div class="feature col text-center">
+                        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-white fs-2 mb-4 bg-primary rounded-circle shadow-sm"
+                            style="width: 80px; height: 80px;">
+                            <i class="bi bi-collection"></i>
+                        </div>
+                        <h3 class="fs-4 fw-bold" style="font-family: var(--font-titles);">Gestiona tu Mazo</h3>
+                        <p class="text-secondary small px-md-4">
+                            Crea tu perfil de entrenador para guardar tus cartas favoritas y organizar tu colección
+                            personal.
+                        </p>
+                    </div>
+
+                    <div class="col text-center">
+                        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-white fs-2 mb-4 bg-warning rounded-circle shadow-sm"
+                            style="width: 80px; height: 80px;">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h3 class="fs-4 fw-bold" style="font-family: var(--font-titles);">Comunidad Activa</h3>
+                        <p class="text-secondary small px-md-4">
+                            Interactúa con otros maestros, comparte estrategias y mantente al día con el meta-juego.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="destacados" class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-5" style="font-family: var(--font-titles);">EXPANSIONES RECIENTES</h2>
+                <hr class="mx-auto border-4 border-danger opacity-100" style="width: 80px;">
+                <p class="text-muted">Las últimas cartas añadidas a la base de datos oficial.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div
+                        class="p-5 border border-secondary border-dashed rounded-4 text-center text-muted bg-light shadow-sm">
+                        Slot de Carta 1
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div
+                        class="p-5 border border-secondary border-dashed rounded-4 text-center text-muted bg-light shadow-sm">
+                        Slot de Carta 2
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div
+                        class="p-5 border border-secondary border-dashed rounded-4 text-center text-muted bg-light shadow-sm">
+                        Slot de Carta 3
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div
+                        class="p-5 border border-secondary border-dashed rounded-4 text-center text-muted bg-light shadow-sm">
+                        Slot de Carta 4
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="callToAction" class="py-5 text-center bg-dark text-white">
+            <div class="container">
+
+                <h2 class="fw-bold mb-3">
+                    ¿Listo para convertirte en Maestro TCG?
+                </h2>
+
+                <p class="text-secondary mb-4">
+                    Explora cartas, expansiones y construye tu estrategia perfecta.
+                </p>
+
+                <a href="/views/pages/cartas.html" class="btn btn-outline-light btn-lg px-5 fw-bold ms-3">
+                    Explorar primero
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="./public/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

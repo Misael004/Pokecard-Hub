@@ -86,18 +86,26 @@
     justify-content: center;
 }
 
+#trainerCarousel,
+#trainerCarousel .carousel-inner,
+#trainerCarousel .carousel-item {
+    overflow: visible;
+}
+
 .trainer-img {
-    height: 250px;
-    /* Tamaño grande para que destaque */
+    max-height: 300px;
+    max-width: 100%;
     width: auto;
-    image-rendering: pixelated;
-    /* Mantiene el estilo retro sin que se vea borroso */
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.4));
     transition: transform 0.5s ease;
 }
 
 .carousel-item.active .trainer-img {
-    transform: scale(1.1);
+    transform: scale(1.03);
     /* Pequeño zoom cuando aparece el entrenador */
 }
 
@@ -111,8 +119,23 @@
     text-transform: uppercase;
 }
 
+.medal-img {
+    max-height: 180px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.4s ease;
+}
 
+/* Medallas obtenidas */
+.medal-earned {
+    filter: drop-shadow(0 0 20px gold);
+}
 
+/* Medallas NO obtenidas */
+.medal-locked {
+    filter: grayscale(100%) opacity(0.4);
+}
 
 #seccion-juegos {
     position: absolute;
