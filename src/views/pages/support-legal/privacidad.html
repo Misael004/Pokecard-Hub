@@ -4,56 +4,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeCard Hub - Maestro</title>
-    <link rel="stylesheet" href="../../../src/css/footer.css">
-    <link rel="stylesheet" href="../../../src/css/main-privacidad.css">
+    <title>Infinity Pokédex</title>
+    <link rel="stylesheet" href="./css/pages_css/footer.css">
+    <link rel="stylesheet" href="./css/pages_css/header.css">
+    <link rel="stylesheet" href="../../src/css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-light">
+    <header class="header-pokemon shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark py-2">
+            <div class="container-fluid px-4">
+                <div style="flex: 1;">
+                    <a class="navbar-brand fw-bold d-flex align-items-center m-0" href="/index.html">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
+                            alt="Pokeball" width="28" height="28" class="me-2">
+                        <span class="logo-infinity">Infinity</span>&nbsp;<span class="logo-pokedex">Pokedex</span>
+                    </a>
+                </div>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-            <div class="container"> <a class="navbar-brand fw-bold d-flex align-items-center" href="/index.html"> <span
-                        class="text-danger">Poké</span>Card Hub </a> <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navMain"> <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLogged">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navMain">
-                    <form class="d-flex mx-auto w-50 my-2 my-lg-0">
-                        <div class="input-group"> <input type="search"
-                                class="form-control bg-secondary text-white border-0"
-                                placeholder="Buscar cartas, expansiones..."> <button class="btn btn-danger"
-                                type="submit"><i class="bi bi-search"></i></button> </div>
-                    </form>
-                    <ul class="navbar-nav align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/views/pages/cartas.html">Cartas</a></li>
-                        <li class="nav-item me-3"><a class="nav-link" href="/views/pages/comunidad.html">Comunidad</a>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navLogged" style="flex: 2;">
+                    <ul class="navbar-nav gap-4">
+                        <li class="nav-item">
+                            <a class="nav-link logo-infinity fw-bold" href="/views/pages/cartas.html">Cartas</a>
                         </li>
-                        <li class="nav-item"><a class="btn btn-outline-light btn-sm me-2"
-                                href="/views/pages/auth/login.html">Login</a></li>
-                        <li class="nav-item"><a class="btn btn-danger btn-sm" href="/views/pages/auth/signup.html">Sign
-                                Up</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link logo-infinity fw-bold" href="/views/pages/juegos.html">Juegos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link logo-infinity fw-bold" href="/views/pages/comunidad.html">Comunidad</a>
+                        </li>
                     </ul>
+                </div>
+
+                <div style="flex: 1;" class="d-flex align-items-center justify-content-end gap-3">
+
+                    <form class="d-none d-xl-flex me-2">
+                        <div class="input-group input-group-sm">
+                            <input type="search" class="form-control bg-dark text-white border-secondary"
+                                placeholder="Buscar carta..." style="width: 140px;">
+                            <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+
+                    <div class="d-flex align-items-center gap-1">
+                        <button class="btn btn-link text-white position-relative p-1">
+                            <i class="bi bi-bookmark-star fs-5 text-warning"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark"
+                                style="font-size: 0.6rem;">12</span>
+                        </button>
+                        <button class="btn btn-link text-white position-relative p-1">
+                            <i class="bi bi-bell fs-5"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                style="font-size: 0.6rem;">3</span>
+                        </button>
+                    </div>
+
+                    <div class="dropdown border-start ps-3 ms-2 border-white-50">
+                        <a class="nav-link p-0 d-flex align-items-center dropdown-toggle no-caret" href="#"
+                            id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <div class="rounded-circle bg-info d-flex align-items-center justify-content-center text-white fw-bold shadow-sm border border-2 border-white"
+                                style="width: 38px; height: 38px;">
+                                AU
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 mt-2">
+                            <li>
+                                <h6 class="dropdown-header text-dark">Maestro Entrenador</h6>
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Mi Perfil</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-collection me-2"></i>Mi Mazo</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Ajustes</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#"><i
+                                        class="bi bi-box-arrow-right me-2"></i>Salir</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main style="min-height: 100vh; background: white; display: flex; align-items: center; justify-content: center;">
-        <div class="content-wrapper">
-            <div class="container text-center">
-                <h1 class="display-3 fw-bold">PokéCard Hub</h1>
-                <p class="lead">Desliza hacia abajo para descubrir el poder del fuego...</p>
-                <div class="mt-4">
-                    <i class="bi bi-chevron-double-down fs-1 text-danger"></i>
-                </div>
+    <main class="bicho">
+
+
+
+        <section class="contenedor">
+            <h1>Política de Privacidad</h1>
+
+            <p>
+                La protección de tus datos es una prioridad para nosotros. Esta política explica cómo
+                recopilamos, utilizamos y almacenamos la información que proporcionas al usar nuestra
+                plataforma dedicada a la comunidad de fans de Pokémon.
+            </p>
+
+            <h2>Datos que recopilamos</h2>
+            <ul>
+                <li>Información básica de registro (correo electrónico y nombre de usuario).</li>
+                <li>Preferencias dentro de la plataforma, como Pokémon favoritos o listas guardadas.</li>
+                <li>Datos técnicos como tipo de dispositivo y navegador.</li>
+            </ul>
+
+            <h2>Cómo usamos tus datos</h2>
+            <p>
+                Utilizamos la información para mejorar la experiencia del usuario, personalizar contenido,
+                garantizar la seguridad de la plataforma y ofrecer funciones adicionales como listas
+                personalizadas o recomendaciones.
+            </p>
+
+            <h2>Protección de la información</h2>
+            <p>
+                Implementamos medidas de seguridad para evitar accesos no autorizados y proteger tus datos en
+                todo momento.
+            </p>
+
+            <div class="pokemon">
+                <img id="pokemon-bicho" alt="Volcarona">
             </div>
-        </div>
+        </section>
+
+        <script>
+            fetch("https://pokeapi.co/api/v2/pokemon/volcarona")
+                .then(r => r.json())
+                .then(data => {
+                    document.getElementById("pokemon-bicho").src =
+                        data.sprites.other.showdown.front_default;
+                });
+        </script>
+
+        <style>
+            main {
+                background: linear-gradient(#e8f7d4, #b7e38a);
+                padding: 2rem;
+                color: #2b3d1a;
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+            }
+
+            .pokemon img {
+                width: 180px;
+                margin-top: 30px;
+            }
+        </style>
+
     </main>
 
-    <footer class="footer-reveal">
+    <footer id="main-footer" class="footer-reveal">
         <div class="fire-animation">
             <div class="flame"></div>
             <div class="flame"></div>
@@ -62,50 +169,59 @@
             <div class="flame"></div>
         </div>
 
-        <div class="container position-relative py-4" style="z-index: 10;">
+        <div class="container position-relative py-5" style="z-index: 10;">
             <div class="row">
 
-                <div class="col-12 col-md-4 text-center text-md-start mb-3" data-aos="fade-right">
-                    <h6 class="fw-bold text-warning mb-2" style="letter-spacing: 2px;">POKÉCARD HUB</h6>
-                    <p class="small mb-2">La base de datos definitiva para coleccionistas de TCG Pokémon.</p>
-                    <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-6">
-                        <a href="#" class="hover-link"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="hover-link"><i class="bi bi-x"></i></a>
-                        <a href="#" class="hover-link"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="hover-link"><i class="bi bi-youtube"></i></a>
+                <div class="col-12 col-md-4 text-center text-md-start mb-4" data-aos="fade-right">
+                    <h6 class="fw-bold text-warning mb-3">INFINITY POKEDEX</h6>
+                    <p class="small mb-3">La base de datos definitiva para coleccionistas de TCG Pokémon.</p>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-5">
+                        <a href="#" class="social-link text-white"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link text-white"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link text-white"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link text-white"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 mb-3 text-center text-md-start" data-aos="fade-up">
-                    <h6 class="text-uppercase fw-bold mb-2 text-danger">Explora</h6>
+                <div class="col-6 col-md-2 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="200">
+                    <h6 class="text-uppercase fw-bold mb-3 text-danger">Explora</h6>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="./index.html" class="text-decoration-none hover-link small">Inicio</a></li>
-                        <li><a href="#" class="text-decoration-none hover-link small">Cards</a></li>
-                        <li><a href="#" class="text-decoration-none hover-link small">Games</a></li>
-                        <li><a href="#" class="text-decoration-none hover-link small">Community</a></li>
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="#">Cards</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Community</a></li>
                     </ul>
                 </div>
 
-                <div class="col-6 col-md-4 mb-3 text-center text-md-start" data-aos="fade-left">
-                    <h6 class="text-uppercase fw-bold mb-1 text-warning">Newsletter</h6>
-                    <p class="small mb-2 opacity-75" style="font-size: 0.8rem;">
-                        Recibe alertas sobre nuevas expansiones y cartas raras.
-                    </p>
-                    <div class="input-group input-group-sm mb-2 shadow-sm">
+                <div class="col-6 col-md-2 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="400">
+                    <h6 class="text-uppercase fw-bold mb-3 text-danger">Support</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 text-center text-md-start" data-aos="zoom-in-left"
+                    data-aos-delay="600">
+                    <h6 class="text-uppercase fw-bold mb-2 text-warning">Newsletter</h6>
+                    <div class="input-group input-group-sm mb-3 shadow-sm">
                         <input type="email" class="form-control bg-dark text-white border-secondary"
                             placeholder="Tu email...">
-                        <button class="btn btn-danger btn-sm fw-bold" type="button">¡IR!</button>
+                        <button class="btn btn-danger btn-sm fw-bold">¡IR!</button>
                     </div>
                     <div class="charizard-container">
-                        <img src="../../../src/assets/gif/charizard-footer.gif" alt="Charizard" class="charizard-gif-free">
+                        <img src="../../src/assets/gif/charizard-footer.gif" alt="Charizard" class="charizard-gif-free">
                     </div>
                 </div>
+
             </div>
 
-            <hr class="my-2 border-secondary opacity-25">
+            <hr class="my-4 border-secondary opacity-25">
+
             <div class="text-center">
-                <p class="mb-0 opacity-50" style="font-size: 0.75rem;">
-                    © 2026 <b>PokéCard Hub</b> | Pokémon y personajes son marcas de Nintendo/Game Freak.
+                <p class="mb-0 opacity-50" style="font-size: 0.8rem;">
+                    © 2026 <b>Infinity Pokedex</b> | Pokémon es marca registrada de Nintendo.
                 </p>
             </div>
         </div>
@@ -113,11 +229,49 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
-    </script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 1. Configuramos AOS con once: false para permitir repetición
+            AOS.init({
+                duration: 800,
+                once: false, // Permitir que las animaciones se repitan
+                mirror: true, // Refleja la animación al hacer scroll hacia arriba (opcional)
+                offset: 50
+            });
 
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="/src/js/main.js"></script>
+            const footer = document.querySelector('#main-footer');
+            const internalElements = footer.querySelectorAll('[data-aos]');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // CUANDO EL FOOTER ENTRA EN VISTA
+                        footer.classList.add('visible');
+
+                        // Disparamos las animaciones internas de AOS
+                        setTimeout(() => {
+                            AOS.refresh();
+                            internalElements.forEach(el => {
+                                el.classList.add('aos-animate');
+                            });
+                        }, 150);
+                    } else {
+                        // CUANDO EL FOOTER SALE DE VISTA
+                        // Removemos la clase visible para que el fondo se oculte
+                        footer.classList.remove('visible');
+
+                        // Removemos la clase de AOS para que los elementos se "reseteen"
+                        internalElements.forEach(el => {
+                            el.classList.remove('aos-animate');
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.1 // Se activa en cuanto asoma el 10%
+            });
+
+            if (footer) observer.observe(footer);
+        });
+    </script>
 </body>
 
 </html>

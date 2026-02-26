@@ -1,0 +1,84 @@
+/* ------------------------------
+   ESTILO GLOBAL PARA TODA LA WEB
+--------------------------------*/
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+  color: #222;
+}
+
+/* Títulos */
+main h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+main h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Listas */
+main ul {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+main ul li {
+  margin-bottom: 0.6rem;
+}
+
+/* Imagen del Pokémon */
+.pokemon {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.pokemon img {
+  width: 180px;
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.3));
+}
+
+/* ------------------------------
+   TEMAS POR TIPO DE PÁGINA
+--------------------------------*/
+
+/* Tipo Acero */
+main.acero {
+  background: linear-gradient(#f2f2f2, #c9c9c9);
+  border-left: 6px solid #6e6e6e;
+}
+
+main.acero h1,
+main.acero h2 {
+  color: #3a3a3a;
+}
+
+/* Tipo Bicho */
+main.bicho {
+  background: linear-gradient(#f3ffe6, #d4f7b2);
+  border-left: 6px solid #6fa83a;
+}
+
+main.bicho h1,
+main.bicho h2 {
+  color: #3d5f1f;
+}
+
+/* Tipo Fantasma */
+main.fantasma {
+  background: linear-gradient(#f4f0ff, #dcd2ff);
+  border-left: 6px solid #6a4fbf;
+}
+
+main.fantasma h1,
+main.fantasma h2 {
+  color: #3a2a66;
+}
