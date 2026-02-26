@@ -1,0 +1,288 @@
+:root {
+  --poke-red: #EE1515;
+  --poke-dark-red: #B71010;
+  --poke-yellow: #FFDE00;
+  --poke-dark: #1A1A1A;
+  --poke-white: #FFFFFF;
+  --jungle-deep: #0d2b1a;
+  --jungle-mid: #1a4a2e;
+  --jungle-light: #2d7a4a;
+  --jungle-accent: #5ab87a;
+}
+
+/* ========== FONDO GENERAL CON TEXTURA SELVA ========== */
+body {
+  background-color: var(--jungle-deep);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Fondo con patrón SVG estilo vegetación */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    radial-gradient(ellipse at 20% 30%, rgba(45, 122, 74, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(13, 43, 26, 0.4) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232d7a4a' fill-opacity='0.07'%3E%3Cpath d='M40 0C18 0 0 18 0 40s18 40 40 40 40-18 40-40S62 0 40 0zm0 70C23.4 70 10 56.6 10 40S23.4 10 40 10s30 13.4 30 30-13.4 30-30 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(160deg, #0d2b1a 0%, #122418 40%, #0a1f14 100%);
+  pointer-events: none;
+}
+
+main {
+  background: transparent !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== HERO SECTION POKÉDEX ========== */
+.hero-pokedex {
+  background: linear-gradient(
+    135deg,
+    rgba(13, 43, 26, 0.95) 0%,
+    rgba(26, 74, 46, 0.9) 50%,
+    rgba(13, 43, 26, 0.95) 100%
+  );
+  border-bottom: 3px solid var(--poke-red);
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Líneas decorativas tipo radar Pokédex */
+.hero-pokedex::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(255, 222, 0, 0.04) 39px,
+      rgba(255, 222, 0, 0.04) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(255, 222, 0, 0.04) 39px,
+      rgba(255, 222, 0, 0.04) 40px
+    );
+  pointer-events: none;
+}
+
+/* Círculo decorativo tipo Pokébola */
+.hero-pokedex::after {
+  content: '';
+  position: absolute;
+  right: -120px;
+  top: -120px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 40px solid rgba(238, 21, 21, 0.08);
+  pointer-events: none;
+}
+
+.hero-mascot {
+  width: 160px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+
+/* ========== BARRA DE BÚSQUEDA ========== */
+.search-section {
+  background: rgba(13, 43, 26, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 222, 0, 0.15);
+}
+
+.search-bar-pokedex {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 2px solid rgba(255, 222, 0, 0.3) !important;
+  transition: all 0.3s ease;
+}
+
+.search-bar-pokedex:focus-within {
+  border-color: var(--poke-yellow) !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 222, 0, 0.15);
+}
+
+.search-bar-pokedex .form-control {
+  background: transparent !important;
+  color: white !important;
+}
+
+.search-bar-pokedex .form-control::placeholder {
+  color: rgba(255,255,255,0.45);
+}
+
+.search-bar-pokedex .input-group-text {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* ========== SIDEBAR FILTROS ========== */
+.sidebar-pokedex {
+  background: linear-gradient(160deg, rgba(26, 74, 46, 0.95) 0%, rgba(13, 43, 26, 0.98) 100%) !important;
+  border: 1px solid rgba(255, 222, 0, 0.2) !important;
+  backdrop-filter: blur(10px);
+}
+
+.sidebar-pokedex .form-select {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 222, 0, 0.25);
+  color: white;
+  transition: all 0.3s ease;
+  font-size: 0.88rem;
+}
+
+.sidebar-pokedex .form-select:focus {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-color: var(--poke-yellow);
+  box-shadow: 0 0 0 0.25rem rgba(255, 222, 0, 0.15);
+  color: white;
+}
+
+.sidebar-pokedex .form-select option {
+  background-color: #1a4a2e;
+  color: white;
+}
+
+.sidebar-pokedex .btn-outline-light {
+  border: 2px solid rgba(255, 222, 0, 0.5);
+  color: var(--poke-yellow);
+  font-weight: 600;
+}
+
+.sidebar-pokedex .btn-outline-light:hover {
+  background-color: var(--poke-yellow);
+  border-color: var(--poke-yellow);
+  color: var(--jungle-deep);
+}
+
+/* ========== CONTADOR DE RESULTADOS ========== */
+.results-pokedex {
+  background: rgba(13, 43, 26, 0.85) !important;
+  border-left: 5px solid var(--poke-red) !important;
+  border: 1px solid rgba(255, 222, 0, 0.15);
+  color: white;
+  backdrop-filter: blur(8px);
+}
+
+.results-pokedex .form-select {
+  background-color: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+.results-pokedex .form-select option {
+  background-color: #1a4a2e;
+  color: white;
+}
+
+/* ========== NORMALIZACIÓN DE IMÁGENES ========== */
+.ratio-3x4 {
+  --bs-aspect-ratio: 133.33%;
+}
+
+.card-image-container {
+  height: 400px;
+  overflow: hidden;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.card-img-pokemon {
+  object-fit: contain !important;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+  transition: transform 0.5s ease;
+}
+
+.pokemon-flashcard:hover .card-img-pokemon {
+  transform: scale(1.1);
+}
+
+/* ========== BADGE DE TIPO ========== */
+.badge-type {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 20px;
+  padding: 0.4rem 0.7rem;
+}
+
+/* ========== FONDO MAIN CONTAINER ========== */
+#cardsContainer {
+  background: transparent !important;
+}
+
+/* ========== EFECTO SELVA EN SCROLLBAR ========== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--jungle-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--jungle-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--jungle-accent);
+}
+
+/* ========== SPINNER DE CARGA ========== */
+.spinner-border.text-danger {
+  color: var(--poke-red) !important;
+}
+
+/* ========== ACCORDION FILTROS ========== */
+.sidebar-pokedex .accordion-button::after {
+  filter: invert(1) brightness(0.8) sepia(1) hue-rotate(10deg) saturate(3);
+  /* Flecha en amarillo para que se vea sobre fondo oscuro */
+}
+
+.sidebar-pokedex .accordion-button:not(.collapsed) {
+  color: var(--poke-yellow) !important;
+  box-shadow: none;
+}
+
+.sidebar-pokedex .accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.sidebar-pokedex .accordion-item {
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+.sidebar-pokedex .accordion-item:last-child {
+  border-bottom: none !important;
+}
+
+/* ========== BOTÓN POKÉMON ========== */
+.btn-pokedex {
+  background: linear-gradient(135deg, var(--poke-red), var(--poke-dark-red));
+  border: none;
+  color: white;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.btn-pokedex:hover {
+  background: linear-gradient(135deg, var(--poke-dark-red), #8B0000);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(238, 21, 21, 0.4);
+  color: white;
+}
