@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Pokédex</title>
+    <link rel="stylesheet" href="./css/pages_css/footer.css">
+    <link rel="stylesheet" href="./css/pages_css/header.css">
+    <link rel="stylesheet" href="../../src/css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+    <header class="header-pokemon shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark py-2">
+            <div class="container-fluid px-4">
+                <div style="flex: 1;">
+                    <a class="navbar-brand fw-bold d-flex align-items-center m-0" href="/index.html">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
+                            alt="Pokeball" width="28" height="28" class="me-2">
+                        <span class="logo-infinity">Infinity</span>&nbsp;<span class="logo-pokedex">Pokedex</span>
+                    </a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLogged">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navLogged" style="flex: 2;">
+                    <ul class="navbar-nav gap-4">
+                        <li class="nav-item">
+                            <a class="nav-link logo-infinity fw-bold" href="/views/pages/cartas.html">Cartas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link logo-infinity fw-bold" href="/views/pages/juegos.html">Juegos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link logo-infinity fw-bold" href="/views/pages/comunidad.html">Comunidad</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="flex: 1;" class="d-flex align-items-center justify-content-end gap-3">
+
+                    <form class="d-none d-xl-flex me-2">
+                        <div class="input-group input-group-sm">
+                            <input type="search" class="form-control bg-dark text-white border-secondary"
+                                placeholder="Buscar carta..." style="width: 140px;">
+                            <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+
+                    <div class="d-flex align-items-center gap-1">
+                        <button class="btn btn-link text-white position-relative p-1">
+                            <i class="bi bi-bookmark-star fs-5 text-warning"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark"
+                                style="font-size: 0.6rem;">12</span>
+                        </button>
+                        <button class="btn btn-link text-white position-relative p-1">
+                            <i class="bi bi-bell fs-5"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                style="font-size: 0.6rem;">3</span>
+                        </button>
+                    </div>
+
+                    <div class="dropdown border-start ps-3 ms-2 border-white-50">
+                        <a class="nav-link p-0 d-flex align-items-center dropdown-toggle no-caret" href="#"
+                            id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <div class="rounded-circle bg-info d-flex align-items-center justify-content-center text-white fw-bold shadow-sm border border-2 border-white"
+                                style="width: 38px; height: 38px;">
+                                AU
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 mt-2">
+                            <li>
+                                <h6 class="dropdown-header text-dark">Maestro Entrenador</h6>
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Mi Perfil</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-collection me-2"></i>Mi Mazo</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Ajustes</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#"><i
+                                        class="bi bi-box-arrow-right me-2"></i>Salir</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="acero">
+        <section class="contenedor">
+            <h1>Centro de Ayuda</h1>
+
+            <p>
+                Bienvenido al centro de ayuda de nuestra plataforma para fans de Pokémon. Aquí encontrarás
+                respuestas a las dudas más frecuentes, guías de uso y asistencia para navegar por todas las
+                funciones disponibles. Nuestro objetivo es ofrecerte una experiencia clara, accesible y
+                cómoda.
+            </p>
+
+            <h2>Preguntas frecuentes</h2>
+            <ul>
+                <li><strong>¿Cómo creo una cuenta?</strong> Puedes registrarte desde el botón “Crear cuenta” en la parte
+                    superior.</li>
+                <li><strong>¿Cómo cambio mi contraseña?</strong> Accede a tu perfil y selecciona “Configuración de
+                    seguridad”.</li>
+                <li><strong>¿Puedo guardar mis Pokémon favoritos?</strong> Sí, desde la ficha de cada Pokémon puedes
+                    añadirlo a tu lista personal.</li>
+            </ul>
+
+            <h2>Contacto</h2>
+            <p>
+                Si no encuentras la respuesta que buscas, puedes escribirnos mediante el formulario de soporte
+                disponible en tu perfil. Nuestro equipo revisará tu consulta lo antes posible.
+            </p>
+
+            <div class="pokemon">
+                <img id="pokemon-acero" alt="Metagross">
+            </div>
+        </section>
+
+        <script>
+            fetch("https://pokeapi.co/api/v2/pokemon/metagross")
+                .then(r => r.json())
+                .then(data => {
+                    document.getElementById("pokemon-acero").src =
+                        data.sprites.other.showdown.front_default;
+                });
+        </script>
+
+        <style>
+            main {
+                background: linear-gradient(#d7d7d7, #9c9c9c);
+                padding: 2rem;
+                color: #1f1f1f;
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+            }
+
+            .pokemon img {
+                width: 180px;
+                margin-top: 30px;
+            }
+        </style>
+    </main>
+
+
+    <footer id="main-footer" class="footer-reveal">
+        <div class="fire-animation">
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+        </div>
+
+        <div class="container position-relative py-5" style="z-index: 10;">
+            <div class="row">
+
+                <div class="col-12 col-md-4 text-center text-md-start mb-4" data-aos="fade-right">
+                    <h6 class="fw-bold text-warning mb-3">INFINITY POKEDEX</h6>
+                    <p class="small mb-3">La base de datos definitiva para coleccionistas de TCG Pokémon.</p>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-5">
+                        <a href="#" class="social-link text-white"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link text-white"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link text-white"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link text-white"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-2 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="200">
+                    <h6 class="text-uppercase fw-bold mb-3 text-danger">Explora</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="#">Cards</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="400">
+                    <h6 class="text-uppercase fw-bold mb-3 text-danger">Support</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 text-center text-md-start" data-aos="zoom-in-left"
+                    data-aos-delay="600">
+                    <h6 class="text-uppercase fw-bold mb-2 text-warning">Newsletter</h6>
+                    <div class="input-group input-group-sm mb-3 shadow-sm">
+                        <input type="email" class="form-control bg-dark text-white border-secondary"
+                            placeholder="Tu email...">
+                        <button class="btn btn-danger btn-sm fw-bold">¡IR!</button>
+                    </div>
+                    <div class="charizard-container">
+                        <img src="../../src/assets/gif/charizard-footer.gif" alt="Charizard" class="charizard-gif-free">
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="my-4 border-secondary opacity-25">
+
+            <div class="text-center">
+                <p class="mb-0 opacity-50" style="font-size: 0.8rem;">
+                    © 2026 <b>Infinity Pokedex</b> | Pokémon es marca registrada de Nintendo.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 1. Configuramos AOS con once: false para permitir repetición
+            AOS.init({
+                duration: 800,
+                once: false, // Permitir que las animaciones se repitan
+                mirror: true, // Refleja la animación al hacer scroll hacia arriba (opcional)
+                offset: 50
+            });
+
+            const footer = document.querySelector('#main-footer');
+            const internalElements = footer.querySelectorAll('[data-aos]');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // CUANDO EL FOOTER ENTRA EN VISTA
+                        footer.classList.add('visible');
+
+                        // Disparamos las animaciones internas de AOS
+                        setTimeout(() => {
+                            AOS.refresh();
+                            internalElements.forEach(el => {
+                                el.classList.add('aos-animate');
+                            });
+                        }, 150);
+                    } else {
+                        // CUANDO EL FOOTER SALE DE VISTA
+                        // Removemos la clase visible para que el fondo se oculte
+                        footer.classList.remove('visible');
+
+                        // Removemos la clase de AOS para que los elementos se "reseteen"
+                        internalElements.forEach(el => {
+                            el.classList.remove('aos-animate');
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.1 // Se activa en cuanto asoma el 10%
+            });
+
+            if (footer) observer.observe(footer);
+        });
+    </script>
+</body>
+
+</html>
