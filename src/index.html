@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Pokédex</title>
+    <link rel="stylesheet" href="./css/pages_css/footer.css">
+    <link rel="stylesheet" href="./css/pages_css/main.css">
+    <link rel="stylesheet" href="./css/pages_css/header.css">
+    <link rel="stylesheet" href="./css/pages_css/main-index.css">
+    <link rel="stylesheet" href="./css/pages_css/carrusel-inicio.css">
+    <link rel="stylesheet" href="./js/ruleta-index.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+    <header class="header-pokemon shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark py-2">
+            <div class="container-fluid px-4">
+                <div style="flex: 1;">
+                    <a class="navbar-brand fw-bold d-flex align-items-center m-0" href="/index.html">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
+                            alt="Pokeball" width="28" height="28" class="me-2">
+                        <span class="logo-infinity">Infinity</span>&nbsp;<span class="logo-pokedex">Pokedex</span>
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navGuest" style="flex: 2;">
+                    <ul class="navbar-nav gap-4">
+                        <li class="nav-item"><a class="nav-link logo-infinity fw-bold"
+                                href="/views/pages/cartas.html">Cartas</a></li>
+                        <li class="nav-item"><a class="nav-link logo-infinity fw-bold"
+                                href="/views/pages/juegos.html">Juegos</a></li>
+                        <li class="nav-item"><a class="nav-link logo-infinity fw-bold"
+                                href="/views/pages/comunidad.html">Comunidad</a></li>
+                    </ul>
+                </div>
+
+                <div style="flex: 1;" class="d-flex align-items-center justify-content-end gap-3">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/145.gif"
+                        alt="Zapdos" style="height: 55px; width: auto; transform: scaleX(-1);"
+                        class="d-none d-lg-block me-3">
+
+                    <div class="d-flex gap-2 border-start ps-3 ms-2 border-white-50">
+                        <a href="/views/pages/auth/login.html"
+                            class="btn btn-outline-light btn-sm px-3 fw-bold">Login</a>
+                        <a href="/views/pages/auth/signup.html" class="btn btn-danger btn-sm px-3 fw-bold">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main
+        style="min-height: 110vh; background: white; position: relative; z-index: 2; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        <div class="flex-grow-1">
+
+            <section id="hero" class="text-white py-5">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="display-1 fw-bold mb-3" style="font-family: var(--font-titles);">
+                                Forja tu <span class="text-danger">Leyenda</span>
+                            </h1>
+                            <p class="lead mb-4 text-secondary">
+                                La enciclopedia definitiva para dominar el mundo Pokemon.
+                            </p>
+                            <div class="d-grid gap-3 d-md-flex justify-content-center justify-content-lg-start">
+                                <a href="/views/pages/cartas.html"
+                                    class="btn btn-danger btn-lg px-5 fw-bold shadow-sm btn-pokemon">
+                                    EXPLORAR CARTAS
+                                </a>
+                                <a href="/views/pages/juegos.html" class="btn btn-outline-light btn-lg px-5 fw-bold">
+                                    VER JUEGOS
+                                </a>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-center justify-content-lg-start">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/150.gif"
+                                    alt="Mewtwo" class="mewtwo-float">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-none d-lg-block text-center">
+                            <div id="trainerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+
+                                    <div class="carousel-item active" data-bs-interval="3000">
+                                        <img src="./assets/img/red.png" class="trainer-img" alt="Red">
+                                        <h5 class="mt-3 trainer-name">Red</h5>
+                                    </div>
+
+                                    <div class="carousel-item" data-bs-interval="3000">
+                                        <img src="./assets/img/N_(anime).png" class="trainer-img" alt="N">
+                                        <h5 class="mt-3 trainer-name">N</h5>
+                                    </div>
+
+                                    <div class="carousel-item" data-bs-interval="3000">
+                                        <img src="./assets/img/may.png" class="trainer-img" alt="May">
+                                        <h5 class="mt-3 trainer-name">May</h5>
+                                    </div>
+
+                                    <div class="carousel-item" data-bs-interval="3000">
+                                        <img src="./assets/img/cintia.png" class="trainer-img" alt="Cintia">
+                                        <h5 class="mt-3 trainer-name">Cintia</h5>
+                                    </div>
+
+                                    <div class="carousel-item" data-bs-interval="3000">
+                                        <img src="./assets/img/ash.png" class="trainer-img" alt="Ash">
+                                        <h5 class="mt-3 trainer-name">Ash</h5>
+                                    </div>
+
+                                    <div class="carousel-item" data-bs-interval="3000">
+                                        <img src="./assets/img/gary.png" class="trainer-img" alt="Gary">
+                                        <h5 class="mt-3 trainer-name">Gary</h5>
+                                    </div>
+
+                                    <div class="carousel-item" data-bs-interval="3000">
+                                        <img src="./assets/img/leon.png" class="trainer-img" alt="Leon">
+                                        <h5 class="mt-3 trainer-name">Leon</h5>
+                                    </div>
+
+                                    <div class="carousel-item" data-bs-interval="3000">
+                                        <img src="./assets/img/Lylia_(anime_SL).png" class="trainer-img" alt="Lillie">
+                                        <h5 class="mt-3 trainer-name">Lillie</h5>
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="3000">
+                                        <img src="./assets/img/brock.png" class="trainer-img" alt="Brock">
+                                        <h5 class="mt-3 trainer-name">Brock</h5>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="seccion-cartas" style="position: relative; overflow: hidden;">
+                <div id="main-app"
+                    class="container-fluid min-vh-100 d-flex flex-column align-items-center justify-content-center position-relative">
+
+                    <header class="text-center position-absolute top-0 mt-5 w-100">
+                        <h1 class="display-3 fw-bold text-uppercase text-white">
+                            Descubre <span class="text-danger">CARTAS</span>
+                        </h1>
+                        <p class="text-secondary tracking-widest">DESLIZA PARA GIRAR • EXPLORA EL UNIVERSO</p>
+                    </header>
+
+                    <div class="scene">
+                        <div class="carousel" id="carousel"></div>
+                    </div>
+
+                    <div
+                        class="controls-container position-absolute bottom-0 mb-5 pb-3 w-100 d-flex justify-content-center align-items-center">
+                        <div class="d-flex align-items-center" style="position: relative; left: 85px;">
+                            <button id="btn-explorar" class="btn btn-outline-danger btn-lg rounded-circle p-3 shadow-lg"
+                                title="Actualizar Cartas">
+                                <i class="bi bi-arrow-repeat"></i>
+                            </button>
+
+                            <a href="#"
+                                class="btn btn-danger btn-lg rounded-pill px-4 fw-bold shadow-lg ms-3 d-flex align-items-center"
+                                style="white-space: nowrap;">
+                                Info
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="seccion-juegos" class="py-5" style="position: relative; overflow: hidden;">
+                <div class="container py-5">
+
+                    <div class="text-center mb-5">
+                        <h2 class="display-4 fw-bold text-white text-uppercase"
+                            style="font-family: 'Orbitron', sans-serif; text-shadow: 0 0 15px var(--accent-color);">
+                            Juegos <span style="color: var(--accent-color);"> Destascados</span>
+                        </h2>
+                        <p class="text-secondary tracking-widest">REVIVE LAS AVENTURAS CLÁSICAS</p>
+                    </div>
+
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="game-card">
+                                <div class="game-badge">GBA</div>
+                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/384.png"
+                                    alt="Rayquaza" class="game-img">
+                                <div class="game-info">
+                                    <h3>Pokémon Esmeralda</h3>
+                                    <p>La versión definitiva de Hoenn.</p>
+                                    <a href="https://www.retrogames.cc/gba-games/pokemon-emerald-version.html"
+                                        target="_blank" class="btn-play">JUGAR AHORA</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="game-card">
+                                <div class="game-badge">GBA</div>
+                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png"
+                                    alt="Charizard" class="game-img">
+                                <div class="game-info">
+                                    <h3>Rojo Fuego</h3>
+                                    <p>El regreso a Kanto con mejores gráficos.</p>
+                                    <a href="https://www.retrogames.cc/gba-games/pokemon-fire-red-version-v1-1.html"
+                                        target="_blank" class="btn-play">JUGAR AHORA</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="game-card border-accent">
+                                <div class="game-badge badge-blue">GBC</div>
+                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/245.png" alt="Suicune"
+                                    class="game-img">
+                                <div class="game-info">
+                                    <h3>Pokémon Cristal</h3>
+                                    <p>El clásico de Johto con animaciones.</p>
+                                    <a href="https://www.retrogames.cc/gameboycolor-games/pokemon-crystal-version.html"
+                                        target="_blank" class="btn-play">JUGAR AHORA</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="comunidad" class="py-5 position-relative overflow-hidden"
+                style="min-height: 80vh; display: flex; align-items: center;">
+                <div class="fondo-oscuro-comunidad"></div>
+
+                <div class="container position-relative" style="z-index: 2;">
+
+                    <div class="row mb-5 text-center text-white">
+                        <div class="col-12">
+                            <h2 class="display-4 fw-bold text-uppercase m-0"
+                                style="font-family: 'Orbitron', sans-serif;">
+                                Comunidad
+                            </h2>
+                            <p class="text-info tracking-widest text-uppercase fw-bold mt-2">Conecta con tu equipo</p>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-12 col-lg-4">
+                            <div
+                                class="card h-100 bg-black bg-opacity-50 border-warning border-opacity-25 text-white shadow">
+                                <div
+                                    class="card-header bg-warning text-dark fw-bold d-flex justify-content-between align-items-center">
+                                    <span><i class="bi bi-calendar-event-fill me-2"></i>EVENTS</span>
+                                    <span class="badge bg-dark">4 NUEVOS</span>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="list-group list-group-flush">
+                                        <div
+                                            class="list-group-item bg-transparent text-white border-secondary border-opacity-25 py-2">
+                                            <h6 class="mb-0 text-warning small fw-bold">Online Tournament - Oct 20</h6>
+                                            <small class="opacity-75">tournament and meetups</small>
+                                        </div>
+                                        <div
+                                            class="list-group-item bg-transparent text-white border-secondary border-opacity-25 py-2">
+                                            <h6 class="mb-0 small fw-bold">Local Meetup (Kanto) - Nov 25</h6>
+                                            <small class="opacity-75">Kanto Region</small>
+                                        </div>
+                                        <div
+                                            class="list-group-item bg-transparent text-white border-secondary border-opacity-25 py-2">
+                                            <h6 class="mb-0 small fw-bold">Shiny Hunting Competition</h6>
+                                            <small class="opacity-75">Now 1</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-0">
+                                    <button class="btn btn-sm btn-outline-warning w-100 rounded-pill mt-2">VER
+                                        CALENDARIO</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-4 text-center">
+                            <div
+                                class="card h-100 bg-black bg-opacity-50 border-info border-opacity-25 text-white shadow">
+                                <div class="card-header bg-info text-dark fw-bold">
+                                    <i class="bi bi-brush-fill me-2"></i>FAN ZONE
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-2 mb-3">
+                                        <div class="col-6">
+                                            <div class="p-2 border border-info border-opacity-25 rounded bg-dark"><i
+                                                    class="bi bi-water text-info fs-3"></i></div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-2 border border-danger border-opacity-25 rounded bg-dark"><i
+                                                    class="bi bi-fire text-danger fs-3"></i></div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-2 border border-success border-opacity-25 rounded bg-dark"><i
+                                                    class="bi bi-flower1 text-success fs-3"></i></div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-2 border border-warning border-opacity-25 rounded bg-dark"><i
+                                                    class="bi bi-lightning-fill text-warning fs-3"></i></div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-sm btn-info w-100 rounded-pill fw-bold mb-2">SUBMIT YOUR
+                                        ART!</button>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-dark border-secondary btn-sm w-50 small"><i
+                                                class="bi bi-camera"></i> Gallery</button>
+                                        <button class="btn btn-dark border-secondary btn-sm w-50 small"><i
+                                                class="bi bi-trophy"></i> Contest</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-4">
+                            <div class="card h-100 bg-black bg-opacity-50 border-danger border-opacity-25 text-white">
+                                <div class="card-header bg-danger text-white fw-bold">
+                                    <i class="bi bi-chat-dots-fill me-2"></i>FORUMS
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2 p-2 border-start border-danger border-3 bg-dark bg-opacity-50">
+                                        <h6 class="mb-0 small fw-bold">Gen IX Starter Predictions</h6>
+                                        <small class="text-secondary">Sinnlona</small>
+                                    </div>
+                                    <div class="mb-2 p-2 border-start border-danger border-3 bg-dark bg-opacity-50">
+                                        <h6 class="mb-0 small fw-bold">Best Pokémon Game Ever?</h6>
+                                        <small class="text-secondary">Trading Tips & Tricks</small>
+                                    </div>
+                                    <div class="p-2 border-start border-danger border-3 bg-dark bg-opacity-50">
+                                        <h6 class="mb-0 small fw-bold">Trading Tips & Tricks</h6>
+                                        <small class="text-secondary">Active now</small>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-0">
+                                    <button class="btn btn-sm btn-outline-danger w-100 rounded-pill mt-2">EXPLORAR
+                                        TEMAS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer id="main-footer" class="footer-reveal">
+        <div class="fire-animation">
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+        </div>
+
+        <div class="container position-relative py-5" style="z-index: 10;">
+            <div class="row">
+
+                <div class="col-12 col-md-4 text-center text-md-start mb-4" data-aos="fade-right">
+                    <h6 class="fw-bold text-warning mb-3">INFINITY POKEDEX</h6>
+                    <p class="small mb-3">La base de datos definitiva para coleccionistas de TCG Pokémon.</p>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-5">
+                        <a href="#" class="social-link text-white"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link text-white"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link text-white"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link text-white"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-2 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="200">
+                    <h6 class="text-uppercase fw-bold mb-3 text-danger">Explora</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="#">Cards</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="400">
+                    <h6 class="text-uppercase fw-bold mb-3 text-danger">Support</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 text-center text-md-start" data-aos="zoom-in-left"
+                    data-aos-delay="600">
+                    <h6 class="text-uppercase fw-bold mb-2 text-warning">Newsletter</h6>
+                    <div class="input-group input-group-sm mb-3 shadow-sm">
+                        <input type="email" class="form-control bg-dark text-white border-secondary"
+                            placeholder="Tu email...">
+                        <button class="btn btn-danger btn-sm fw-bold">¡IR!</button>
+                    </div>
+                    <div class="charizard-container">
+                        <img src="../../src/assets/gif/charizard-footer.gif" alt="Charizard" class="charizard-gif-free">
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="my-4 border-secondary opacity-25">
+
+            <div class="text-center">
+                <p class="mb-0 opacity-50" style="font-size: 0.8rem;">
+                    © 2026 <b>Infinity Pokedex</b> | Pokémon es marca registrada de Nintendo.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 1. Configuramos AOS con once: false para permitir repetición
+            AOS.init({
+                duration: 800,
+                once: false, // Permitir que las animaciones se repitan
+                mirror: true, // Refleja la animación al hacer scroll hacia arriba (opcional)
+                offset: 50
+            });
+
+            const footer = document.querySelector('#main-footer');
+            const internalElements = footer.querySelectorAll('[data-aos]');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // CUANDO EL FOOTER ENTRA EN VISTA
+                        footer.classList.add('visible');
+
+                        // Disparamos las animaciones internas de AOS
+                        setTimeout(() => {
+                            AOS.refresh();
+                            internalElements.forEach(el => {
+                                el.classList.add('aos-animate');
+                            });
+                        }, 150);
+                    } else {
+                        // CUANDO EL FOOTER SALE DE VISTA
+                        // Removemos la clase visible para que el fondo se oculte
+                        footer.classList.remove('visible');
+
+                        // Removemos la clase de AOS para que los elementos se "reseteen"
+                        internalElements.forEach(el => {
+                            el.classList.remove('aos-animate');
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.1 // Se activa en cuanto asoma el 10%
+            });
+
+            if (footer) observer.observe(footer);
+        });
+    </script>
+
+    <script src="./js/ruleta-index.js"></script>
+</body>
+
+</html>

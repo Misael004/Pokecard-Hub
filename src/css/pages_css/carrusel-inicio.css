@@ -1,0 +1,94 @@
+/* --- Estilos del Carrusel 3D --- */
+#seccion-cartas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Pon aquí la ruta de tu imagen */
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                url('../../assets/fonts/fondo-carrusel-index.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Opcional: efecto pro al hacer scroll */
+    z-index: 1;
+}
+
+#seccion-cartas h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 20px #ff2d55;
+}
+
+#seccion-cartas .scene {
+    width: 210px;
+    height: 300px;
+    perspective: 1200px;
+    position: relative;
+    z-index: 10;
+}
+
+#seccion-cartas .carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+}
+
+#seccion-cartas .card-pokemon {
+    position: absolute;
+    width: 200px;
+    height: 280px;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -140px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* CAMBIO IMPORTANTE: Cambia 'hidden' por 'visible' */
+    backface-visibility: visible !important;
+
+    /* Añadimos esto para asegurar que el navegador renderice las 8 cartas en 3D */
+    transform-style: preserve-3d;
+}
+
+#seccion-cartas .card-pokemon:hover {
+    border-color: #00f2ff;
+    box-shadow: 0 0 40px #00f2ff;
+    transform: translateY(-20px) !important;
+}
+
+#seccion-cartas .card-pokemon img {
+    width: 90%;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+}
+
+#seccion-cartas .pokemon-name {
+    margin-top: 15px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: capitalize;
+    color: #fff;
+    border-bottom: 2px solid #ff2d55;
+}
+
+#btn-explorar {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+    z-index: 20;
+}
+
+#btn-explorar:hover {
+    background: #ff2d55;
+    box-shadow: 0 0 30px #ff2d55;
+    color: white;
+}

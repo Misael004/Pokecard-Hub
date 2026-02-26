@@ -1,0 +1,264 @@
+#hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh;
+    /* Un poco más alto para lucir la imagen */
+    /* Color de fondo casi negro para oscurecer la imagen */
+    background-color: #0a0a0a;
+    border-bottom: 5px solid #ffcb05;
+    /* El amarillo ahora es solo un detalle en el borde */
+    display: flex;
+    align-items: center;
+}
+
+/* Capa de la imagen de fondo */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../assets/fonts/hero-fondo.png');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    /* SUBIMOS LA OPACIDAD: Antes tenías 0.1, ahora 0.4 para que se vea */
+    opacity: 0.5;
+
+    /* ESTO OSCURECE LA IMAGEN: Crea un filtro oscuro sobre ella */
+    filter: brightness(0.8) contrast(1.2);
+
+    z-index: 0;
+}
+
+/* Opcional: Añadir un degradado para que el texto sea más legible */
+#hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Degradado de negro a transparente de izquierda a derecha */
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: 1;
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2;
+    /* Por encima de la imagen y del degradado */
+}
+
+/* Animación de levitación */
+@keyframes floatMewtwo {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.mewtwo-float {
+    height: 80px;
+    /* Tamaño ideal para que no opaque el texto */
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(160, 32, 240, 0.6));
+    /* Resplandor púrpura */
+    animation: floatMewtwo 3s ease-in-out infinite;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Estilos del Carrusel de Entrenadores */
+#trainerCarousel {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#trainerCarousel,
+#trainerCarousel .carousel-inner,
+#trainerCarousel .carousel-item {
+    overflow: visible;
+}
+
+.trainer-img {
+    max-height: 300px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.4));
+    transition: transform 0.5s ease;
+}
+
+.carousel-item.active .trainer-img {
+    transform: scale(1.03);
+    /* Pequeño zoom cuando aparece el entrenador */
+}
+
+.trainer-name {
+    font-family: var(--font-titles);
+    /* Usa tu fuente de títulos */
+    color: #ffcb05;
+    /* Amarillo Pokémon */
+    text-shadow: 2px 2px 0px #000;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.medal-img {
+    max-height: 180px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.4s ease;
+}
+
+/* Medallas obtenidas */
+.medal-earned {
+    filter: drop-shadow(0 0 20px gold);
+}
+
+/* Medallas NO obtenidas */
+.medal-locked {
+    filter: grayscale(100%) opacity(0.4);
+}
+
+#seccion-juegos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Pon aquí la ruta de tu imagen */
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                url('../../assets/fonts/fondo-tierra.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Opcional: efecto pro al hacer scroll */
+    z-index: 1;
+}
+
+.game-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.game-card:hover {
+    transform: translateY(-15px);
+    background: rgba(0, 242, 255, 0.05);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+}
+
+.game-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+    transition: transform 0.4s ease;
+}
+
+.game-card:hover .game-img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.game-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.game-info p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+.game-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--glow-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.badge-blue {
+    background: #007bff;
+}
+
+.btn-play {
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-play:hover {
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 20px var(--accent-color);
+    font-weight: bold;
+}
+
+
+.fondo-oscuro-comunidad {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Pon aquí la ruta de tu imagen */
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                url('../../assets/fonts/fondo-marino.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Opcional: efecto pro al hacer scroll */
+    z-index: 1;
+}
+
+#comunidad .card {
+    backdrop-filter: blur(12px); /* Efecto de cristal */
+    transition: transform 0.3s ease;
+}
+
+#comunidad .card:hover {
+    transform: scale(1.02);
+}
+
+.tracking-widest {
+    letter-spacing: 4px;
+}
