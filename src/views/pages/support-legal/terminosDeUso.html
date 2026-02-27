@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinity Pokédex</title>
-    <link rel="stylesheet" href="./css/pages_css/footer.css">
-    <link rel="stylesheet" href="./css/pages_css/header.css">
-    <link rel="stylesheet" href="../../src/css/main.css">
+    <link rel="icon" type="image/png" href="../../../assets/img/PIKACHU-FAVICON.png">
+    <link rel="stylesheet" href="../../../css/pages_css/footer.css">
+    <link rel="stylesheet" href="../../../css/pages_css/header.css">
+    <link rel="stylesheet" href="./css/pages_css/main.css">
+    <link rel="stylesheet" href="./css/pages_css/main-index.css">
+    <link rel="stylesheet" href="./css/pages_css/carrusel-inicio.css">
+    <link rel="stylesheet" href="./js/ruleta-index.js">
+    <link rel="stylesheet" href="../../../css/pages_css/comunidad-principal.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -19,7 +24,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark py-2">
             <div class="container-fluid px-4">
                 <div style="flex: 1;">
-                    <a class="navbar-brand fw-bold d-flex align-items-center m-0" href="/index.html">
+                    <a class="navbar-brand fw-bold d-flex align-items-center m-0" href="../../../index-logueado.html">
                         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
                             alt="Pokeball" width="28" height="28" class="me-2">
                         <span class="logo-infinity">Infinity</span>&nbsp;<span class="logo-pokedex">Pokedex</span>
@@ -33,13 +38,13 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navLogged" style="flex: 2;">
                     <ul class="navbar-nav gap-4">
                         <li class="nav-item">
-                            <a class="nav-link logo-infinity fw-bold" href="/views/pages/cartas.html">Cartas</a>
+                            <a class="nav-link logo-infinity fw-bold" href="../cartas.html">Cartas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link logo-infinity fw-bold" href="/views/pages/juegos.html">Juegos</a>
+                            <a class="nav-link logo-infinity fw-bold" href="../juegos.html">Juegos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link logo-infinity fw-bold" href="/views/pages/comunidad.html">Comunidad</a>
+                            <a class="nav-link logo-infinity fw-bold" href="../comunidad/comunidad-principal.html">Comunidad</a>
                         </li>
                     </ul>
                 </div>
@@ -170,7 +175,7 @@
 
                 <div class="col-12 col-md-4 text-center text-md-start mb-4" data-aos="fade-right">
                     <h6 class="fw-bold text-warning mb-3">INFINITY POKEDEX</h6>
-                    <p class="small mb-3">La base de datos definitiva para coleccionistas de TCG Pokémon.</p>
+                    <p class="small mb-3">La base de datos definitiva para coleccionistas de Pokémon.</p>
                     <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-5">
                         <a href="#" class="social-link text-white"><i class="bi bi-facebook"></i></a>
                         <a href="#" class="social-link text-white"><i class="bi bi-twitter-x"></i></a>
@@ -182,19 +187,19 @@
                 <div class="col-6 col-md-2 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="200">
                     <h6 class="text-uppercase fw-bold mb-3 text-danger">Explora</h6>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="./index.html">Inicio</a></li>
-                        <li><a href="#">Cards</a></li>
-                        <li><a href="#">Games</a></li>
-                        <li><a href="#">Community</a></li>
+                        <li><a href="../../../index-logueado.html">Inicio</a></li>
+                        <li><a href="../../../views/pages/cartas.html">Cards</a></li>
+                        <li><a href="../../../views/pages/juegos.html">Games</a></li>
+                        <li><a href="../../pages/comunidad/comunidad-principal.html">Community</a></li>
                     </ul>
                 </div>
 
                 <div class="col-6 col-md-2 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="400">
                     <h6 class="text-uppercase fw-bold mb-3 text-danger">Support</h6>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#">Ayuda</a></li>
-                        <li><a href="#">Privacidad</a></li>
-                        <li><a href="#">Términos</a></li>
+                        <li><a href="../support-legal/ayuda.html">Ayuda</a></li>
+                        <li><a href="../support-legal/privacidad.html">Privacidad</a></li>
+                        <li><a href="../support-legal/terminosDeUso.html">Términos</a></li>
                     </ul>
                 </div>
 
@@ -207,7 +212,7 @@
                         <button class="btn btn-danger btn-sm fw-bold">¡IR!</button>
                     </div>
                     <div class="charizard-container">
-                        <img src="../../src/assets/gif/charizard-footer.gif" alt="Charizard" class="charizard-gif-free">
+                        <img src="../../../assets/gif/charizard-footer.gif" alt="Charizard" class="charizard-gif-free">
                     </div>
                 </div>
 
@@ -224,50 +229,8 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // 1. Configuramos AOS con once: false para permitir repetición
-            AOS.init({
-                duration: 800,
-                once: false, // Permitir que las animaciones se repitan
-                mirror: true, // Refleja la animación al hacer scroll hacia arriba (opcional)
-                offset: 50
-            });
-
-            const footer = document.querySelector('#main-footer');
-            const internalElements = footer.querySelectorAll('[data-aos]');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // CUANDO EL FOOTER ENTRA EN VISTA
-                        footer.classList.add('visible');
-
-                        // Disparamos las animaciones internas de AOS
-                        setTimeout(() => {
-                            AOS.refresh();
-                            internalElements.forEach(el => {
-                                el.classList.add('aos-animate');
-                            });
-                        }, 150);
-                    } else {
-                        // CUANDO EL FOOTER SALE DE VISTA
-                        // Removemos la clase visible para que el fondo se oculte
-                        footer.classList.remove('visible');
-
-                        // Removemos la clase de AOS para que los elementos se "reseteen"
-                        internalElements.forEach(el => {
-                            el.classList.remove('aos-animate');
-                        });
-                    }
-                });
-            }, {
-                threshold: 0.1 // Se activa en cuanto asoma el 10%
-            });
-
-            if (footer) observer.observe(footer);
-        });
-    </script>
+    <script src="./js/ruleta-index.js"></script>
+    <script src="../../../js/scroll_animations_footer.js"></script>
 </body>
 
 </html>

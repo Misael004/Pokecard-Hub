@@ -4,56 +4,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeCard Hub - Maestro</title>
-    <link rel="stylesheet" href="../../../src/css/footer.css">
-    <link rel="stylesheet" href="../../../src/css/">
+    <title>Infinity Pokédex</title>
+    <link rel="icon" type="image/png" href="../../../assets/img/PIKACHU-FAVICON.png">
+    <link rel="stylesheet" href="../../../css/pages_css/footer.css">
+    <link rel="stylesheet" href="../../../css/pages_css/header.css">
+    <link rel="stylesheet" href="./css/pages_css/main.css">
+    <link rel="stylesheet" href="./css/pages_css/main-index.css">
+    <link rel="stylesheet" href="../../../css/pages_css/main-fanZone.css">
+    <link rel="stylesheet" href="./css/pages_css/carrusel-inicio.css">
+    <link rel="stylesheet" href="./js/ruleta-index.js">
+    <link rel="stylesheet" href="../../../css/pages_css/comunidad-principal.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-light">
+    <header class="header-pokemon shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark py-2">
+            <div class="container-fluid px-4">
+                <div style="flex: 1;">
+                    <a class="navbar-brand fw-bold d-flex align-items-center m-0" href="../../../index-logueado.html">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
+                            alt="Pokeball" width="28" height="28" class="me-2">
+                        <span class="logo-infinity">Infinity</span>&nbsp;<span class="logo-pokedex">Pokedex</span>
+                    </a>
+                </div>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-            <div class="container"> <a class="navbar-brand fw-bold d-flex align-items-center" href="/index.html"> <span
-                        class="text-danger">Poké</span>Card Hub </a> <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navMain"> <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLogged">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navMain">
-                    <form class="d-flex mx-auto w-50 my-2 my-lg-0">
-                        <div class="input-group"> <input type="search"
-                                class="form-control bg-secondary text-white border-0"
-                                placeholder="Buscar cartas, expansiones..."> <button class="btn btn-danger"
-                                type="submit"><i class="bi bi-search"></i></button> </div>
-                    </form>
-                    <ul class="navbar-nav align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/views/pages/cartas.html">Cartas</a></li>
-                        <li class="nav-item me-3"><a class="nav-link" href="/views/pages/comunidad.html">Comunidad</a>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navLogged" style="flex: 2;">
+                    <ul class="navbar-nav gap-4">
+                        <li class="nav-item">
+                            <a class="nav-link logo-infinity fw-bold" href="../cartas.html">Cartas</a>
                         </li>
-                        <li class="nav-item"><a class="btn btn-outline-light btn-sm me-2"
-                                href="/views/pages/auth/login.html">Login</a></li>
-                        <li class="nav-item"><a class="btn btn-danger btn-sm" href="/views/pages/auth/signup.html">Sign
-                                Up</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link logo-infinity fw-bold" href="../juegos.html">Juegos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link logo-infinity fw-bold"
+                                href="./comunidad-principal.html">Comunidad</a>
+                        </li>
                     </ul>
+                </div>
+
+                <div style="flex: 1;" class="d-flex align-items-center justify-content-end gap-3">
+
+                    <form class="d-none d-xl-flex me-2">
+                        <div class="input-group input-group-sm">
+                            <input type="search" class="form-control bg-dark text-white border-secondary"
+                                placeholder="Buscar carta..." style="width: 140px;">
+                            <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+
+                    <div class="d-flex align-items-center gap-1">
+                        <button class="btn btn-link text-white position-relative p-1">
+                            <i class="bi bi-bookmark-star fs-5 text-warning"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark"
+                                style="font-size: 0.6rem;">12</span>
+                        </button>
+                        <button class="btn btn-link text-white position-relative p-1">
+                            <i class="bi bi-bell fs-5"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                style="font-size: 0.6rem;">3</span>
+                        </button>
+                    </div>
+
+                    <div class="dropdown border-start ps-3 ms-2 border-white-50">
+                        <a class="nav-link p-0 d-flex align-items-center dropdown-toggle no-caret" href="#"
+                            id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <div class="rounded-circle bg-info d-flex align-items-center justify-content-center text-white fw-bold shadow-sm border border-2 border-white"
+                                style="width: 38px; height: 38px;">
+                                AU
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 mt-2">
+                            <li>
+                                <h6 class="dropdown-header text-dark">Maestro Entrenador</h6>
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Mi Perfil</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-collection me-2"></i>Mi Mazo</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Ajustes</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#"><i
+                                        class="bi bi-box-arrow-right me-2"></i>Salir</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main style="min-height: 100vh; background: white; display: flex; align-items: center; justify-content: center;">
-        <div class="content-wrapper">
-            <div class="container text-center">
-                <h1 class="display-3 fw-bold">PokéCard Hub</h1>
-                <p class="lead">Desliza hacia abajo para descubrir el poder del fuego...</p>
-                <div class="mt-4">
-                    <i class="bi bi-chevron-double-down fs-1 text-danger"></i>
+    <main class="main-siniestro-artistico py-5">
+        <div class="container position-relative">
+
+            <div class="d-flex align-items-center justify-content-center mb-5 title-header-siniestro">
+                <h1 class="fw-bold display-4 texto-siniestro">ZONA ARTÍSTICA NOCTURNA</h1>
+
+                <div class="ms-4 dark-pokemon-side">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/571.gif"
+                        alt="Zoroark animado" class="dark-gif">
+                </div>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="art-card h-100 shadow-siniestra" data-aos="fade-up">
+                        <div class="art-image-wrapper">
+                            <img src="../../../assets/img/gengar.png"
+                                alt="Arte Gengar" class="img-fluid art-img">
+                            <div class="art-overlay">
+                                <i class="bi bi-eye-fill fs-1 text-lila-claro"></i>
+                            </div>
+                        </div>
+                        <div class="art-details p-3">
+                            <h5 class="fw-bold text-lila-claro">El Abrazo Sombrío</h5>
+                            <p class="small text-muted mb-0">Óleo sobre lienzo por **GastlyGal**</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="art-card h-100 shadow-siniestra" data-aos="fade-up" data-aos-delay="100">
+                        <div class="art-image-wrapper">
+                            <img src="../../../assets/img/mismagius.png"
+                                alt="Arte Mismagius" class="img-fluid art-img">
+                            <div class="art-overlay">
+                                <i class="bi bi-eye-fill fs-1 text-lila-claro"></i>
+                            </div>
+                        </div>
+                        <div class="art-details p-3">
+                            <h5 class="fw-bold text-lila-claro">Canto de la Luna</h5>
+                            <p class="small text-muted mb-0">Lego espectral por **SpookySpheal**</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 featured-art">
+                    <div class="art-card h-100 shadow-siniestra-glow" data-aos="fade-up" data-aos-delay="200">
+                        <div class="art-image-wrapper">
+                            <img src="../../../assets/img/darkrai.png"
+                                alt="Arte Darkrai" class="img-fluid art-img">
+                            <div class="art-overlay featured-overlay">
+                                <i class="bi bi-eye-fill fs-1 text-warning-glow"></i>
+                            </div>
+                        </div>
+                        <div class="art-details p-3 bg-destacado-siniestro">
+                            <h5 class="fw-bold text-warning-glow">Pesadilla Culinaria</h5>
+                            <p class="small text-muted mb-0">Postre Crepuscral por **MorpheusShadow**</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="art-card h-100 shadow-siniestra" data-aos="fade-up" data-aos-delay="300">
+                        <div class="art-image-wrapper">
+                            <img src="../../../assets/img/sableye.png"
+                                alt="Arte Sableye" class="img-fluid art-img">
+                            <div class="art-overlay">
+                                <i class="bi bi-eye-fill fs-1 text-lila-claro"></i>
+                            </div>
+                        </div>
+                        <div class="art-details p-3">
+                            <h5 class="fw-bold text-lila-claro">Gemas del Alma</h5>
+                            <p class="small text-muted mb-0">Arte Conceptual por **GemHunter**</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="art-card h-100 shadow-siniestra" data-aos="fade-up" data-aos-delay="400">
+                        <div class="art-image-wrapper">
+                            <img src="../../../assets/img/Banette.png"
+                                alt="Arte Banette" class="img-fluid art-img">
+                            <div class="art-overlay">
+                                <i class="bi bi-eye-fill fs-1 text-lila-claro"></i>
+                            </div>
+                        </div>
+                        <div class="art-details p-3">
+                            <h5 class="fw-bold text-lila-claro">Venganza de Papel</h5>
+                            <p class="small text-muted mb-0">Pintura a cera por **DollMaker**</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="art-card action-card h-100 bg-siniestro-azulejado shadow-siniestra-strong">
+                        <div class="art-details text-center p-5">
+                            <div class="bg-lila-oscuro d-inline-block p-4 rounded-circle mb-4 shadow">
+                                <i class="bi bi-plus-square-dotted text-lila-claro fs-1"></i>
+                            </div>
+                            <h3 class="fw-bold text-lila-claro mb-3">¿Tienes tu propia Pesadilla?</h3>
+                            <p class="small text-muted mb-4">¡Comparte tu arte siniestro con nosotros y obtén
+                                recompensas del Team Rocket!</p>
+                            <button class="btn btn-siniestro btn-lg fw-bold">
+                                <i class="bi bi-upload"></i> ¡SUBIR MI OBRA MAESTRA!
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-
-    <footer class="footer-reveal">
+    <footer id="main-footer" class="footer-reveal">
         <div class="fire-animation">
             <div class="flame"></div>
             <div class="flame"></div>
@@ -62,62 +224,67 @@
             <div class="flame"></div>
         </div>
 
-        <div class="container position-relative py-4" style="z-index: 10;">
+        <div class="container position-relative py-5" style="z-index: 10;">
             <div class="row">
 
-                <div class="col-12 col-md-4 text-center text-md-start mb-3" data-aos="fade-right">
-                    <h6 class="fw-bold text-warning mb-2" style="letter-spacing: 2px;">POKÉCARD HUB</h6>
-                    <p class="small mb-2">La base de datos definitiva para coleccionistas de TCG Pokémon.</p>
-                    <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-6">
-                        <a href="#" class="hover-link"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="hover-link"><i class="bi bi-x"></i></a>
-                        <a href="#" class="hover-link"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="hover-link"><i class="bi bi-youtube"></i></a>
+                <div class="col-12 col-md-4 text-center text-md-start mb-4" data-aos="fade-right">
+                    <h6 class="fw-bold text-warning mb-3">INFINITY POKEDEX</h6>
+                    <p class="small mb-3">La base de datos definitiva para coleccionistas de Pokémon.</p>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-5">
+                        <a href="#" class="social-link text-white"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link text-white"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link text-white"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link text-white"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
 
-                <div class="col-6 col-md-4 mb-3 text-center text-md-start" data-aos="fade-up">
-                    <h6 class="text-uppercase fw-bold mb-2 text-danger">Explora</h6>
+                <div class="col-6 col-md-2 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="200">
+                    <h6 class="text-uppercase fw-bold mb-3 text-danger">Explora</h6>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="./index.html" class="text-decoration-none hover-link small">Inicio</a></li>
-                        <li><a href="#" class="text-decoration-none hover-link small">Cards</a></li>
-                        <li><a href="#" class="text-decoration-none hover-link small">Games</a></li>
-                        <li><a href="#" class="text-decoration-none hover-link small">Community</a></li>
+                        <li><a href="../../../index-logueado.html">Inicio</a></li>
+                        <li><a href="../../../views/pages/cartas.html">Cards</a></li>
+                        <li><a href="../../../views/pages/juegos.html">Games</a></li>
+                        <li><a href="../../pages/comunidad/comunidad-principal.html">Community</a></li>
                     </ul>
                 </div>
 
-                <div class="col-6 col-md-4 mb-3 text-center text-md-start" data-aos="fade-left">
-                    <h6 class="text-uppercase fw-bold mb-1 text-warning">Newsletter</h6>
-                    <p class="small mb-2 opacity-75" style="font-size: 0.8rem;">
-                        Recibe alertas sobre nuevas expansiones y cartas raras.
-                    </p>
-                    <div class="input-group input-group-sm mb-2 shadow-sm">
+                <div class="col-6 col-md-2 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="400">
+                    <h6 class="text-uppercase fw-bold mb-3 text-danger">Support</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="../support-legal/ayuda.html">Ayuda</a></li>
+                        <li><a href="../support-legal/privacidad.html">Privacidad</a></li>
+                        <li><a href="../support-legal/terminosDeUso.html">Términos</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 text-center text-md-start" data-aos="zoom-in-left"
+                    data-aos-delay="600">
+                    <h6 class="text-uppercase fw-bold mb-2 text-warning">Newsletter</h6>
+                    <div class="input-group input-group-sm mb-3 shadow-sm">
                         <input type="email" class="form-control bg-dark text-white border-secondary"
                             placeholder="Tu email...">
-                        <button class="btn btn-danger btn-sm fw-bold" type="button">¡IR!</button>
+                        <button class="btn btn-danger btn-sm fw-bold">¡IR!</button>
                     </div>
                     <div class="charizard-container">
-                        <img src="../../../src/assets/gif/charizard-footer.gif" alt="Charizard" class="charizard-gif-free">
+                        <img src="../../../assets/gif/charizard-footer.gif" alt="Charizard" class="charizard-gif-free">
                     </div>
                 </div>
+
             </div>
 
-            <hr class="my-2 border-secondary opacity-25">
+            <hr class="my-4 border-secondary opacity-25">
+
             <div class="text-center">
-                <p class="mb-0 opacity-50" style="font-size: 0.75rem;">
-                    © 2026 <b>PokéCard Hub</b> | Pokémon y personajes son marcas de Nintendo/Game Freak.
+                <p class="mb-0 opacity-50" style="font-size: 0.8rem;">
+                    © 2026 <b>Infinity Pokedex</b> | Pokémon es marca registrada de Nintendo.
                 </p>
             </div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true });
-    </script>
-
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="/src/js/main.js"></script>
+    <script src="./js/ruleta-index.js"></script>
+    <script src="../../../js/scroll_animations_footer.js"></script>
 </body>
 
 </html>
