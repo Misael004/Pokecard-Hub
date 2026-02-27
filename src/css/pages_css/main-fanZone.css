@@ -1,12 +1,145 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
+/* --- ESTILO SINIESTRO Y LILA AZULEJADO --- */
+
+.main-siniestro-artistico {
+    background: radial-gradient(circle, #2a1b3d 0%, #1a0f2e 100%) !important;
+    min-height: 100vh;
 }
 
-.content-wrapper {
+/* Encabezado del título */
+.texto-siniestro {
+    color: #e1bee7;
+    /* Lila muy claro para el título */
+    text-shadow: 0 0 15px rgba(225, 190, 231, 0.6), 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* --- TARJETAS DE ARTE --- */
+
+.art-card {
+    background: #1a0f2e;
+    border-radius: 15px;
+    border: 3px solid #6c2cfd !important;
+    /* Borde lila fuerte azulejado */
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Efecto hover siniestro */
+.art-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(108, 44, 253, 0.3) !important;
+    border-color: #e1bee7 !important;
+}
+
+.art-image-wrapper {
     position: relative;
-    z-index: 2;
-    background: white;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.art-img {
+    transition: transform 0.4s ease;
+}
+
+/* Efecto de imagen siniestra al hover */
+.art-card:hover .art-img {
+    transform: scale(1.1);
+    filter: grayscale(50%);
+}
+
+.art-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(42, 27, 61, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.art-card:hover .art-overlay {
+    opacity: 1;
+}
+
+.art-details h5 {
+    color: #e1bee7;
+}
+
+.art-details p {
+    color: #9c27b0;
+}
+
+/* Estilo para arte destacado */
+.bg-destacado-siniestro {
+    background: linear-gradient(135deg, #1a0f2e, #0a0515);
+}
+
+.text-warning-glow {
+    color: #ffeb3b;
+    text-shadow: 0 0 10px rgba(255, 235, 59, 0.7);
+}
+
+/* --- TARJETA DE ACCIÓN AZULEJADA --- */
+
+.bg-siniestro-azulejado {
+    /* Gradiente lila azulejado fuerte */
+    background: linear-gradient(135deg, #2a1b3d, #6c2cfd) !important;
+    border-color: #e1bee7 !important;
+}
+
+.bg-lila-oscuro {
+    background: #1a0f2e;
+}
+
+.shadow-siniestra-strong {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* --- BOTÓN SINIESTRO --- */
+
+.btn-siniestro {
+    background: linear-gradient(135deg, #6c2cfd 0%, #0d47a1 100%);
+    color: #e1bee7;
+    border: 2px solid #e1bee7;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-siniestro:hover {
+    background: linear-gradient(135deg, #e1bee7 0%, #6c2cfd 100%);
+    color: #1a0f2e;
+    box-shadow: 0 8px 20px rgba(225, 190, 231, 0.5) !important;
+    transform: scale(1.05);
+}
+
+/* --- POSICIONAMIENTO DEL POKÉMON SINIESTRO (ZOROARK) --- */
+
+.dark-pokemon-side {
+    z-index: 10;
+}
+
+.dark-gif {
+    width: 64px;
+    /* Tamaño del sprite de laPokeAPI */
+    height: auto;
+    filter: drop-shadow(0 0 8px #6c2cfd);
+    /* Sombra lila eléctrica */
+    animation: bounceSiniestro 3s ease-in-out infinite;
+}
+
+@keyframes bounceSiniestro {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
