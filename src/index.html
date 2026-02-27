@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinity Pokédex</title>
+    <link rel="icon" type="image/png" href="./assets/img/PIKACHU-FAVICON.png">
     <link rel="stylesheet" href="./css/pages_css/footer.css">
     <link rel="stylesheet" href="./css/pages_css/main.css">
     <link rel="stylesheet" href="./css/pages_css/header.css">
@@ -22,7 +23,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark py-2">
             <div class="container-fluid px-4">
                 <div style="flex: 1;">
-                    <a class="navbar-brand fw-bold d-flex align-items-center m-0" href="/index.html">
+                    <a class="navbar-brand fw-bold d-flex align-items-center m-0" href="./index-logueado.html">
                         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
                             alt="Pokeball" width="28" height="28" class="me-2">
                         <span class="logo-infinity">Infinity</span>&nbsp;<span class="logo-pokedex">Pokedex</span>
@@ -34,9 +35,9 @@
                         <li class="nav-item"><a class="nav-link logo-infinity fw-bold"
                                 href="./views/pages/cartas.html">Cartas</a></li>
                         <li class="nav-item"><a class="nav-link logo-infinity fw-bold"
-                                href="/views/pages/juegos.html">Juegos</a></li>
+                                href="./views/pages/juegos.html">Juegos</a></li>
                         <li class="nav-item"><a class="nav-link logo-infinity fw-bold"
-                                href="/views/pages/comunidad.html">Comunidad</a></li>
+                                href="./views/pages/comunidad/comunidad-principal.html">Comunidad</a></li>
                     </ul>
                 </div>
 
@@ -46,9 +47,9 @@
                         class="d-none d-lg-block me-3">
 
                     <div class="d-flex gap-2 border-start ps-3 ms-2 border-white-50">
-                        <a href="/views/pages/auth/login.html"
+                        <a href="./views/pages/auth/login.html"
                             class="btn btn-outline-light btn-sm px-3 fw-bold">Login</a>
-                        <a href="/views/pages/auth/signup.html" class="btn btn-danger btn-sm px-3 fw-bold">Sign Up</a>
+                        <a href="./views/pages/auth/signUp.html" class="btn btn-danger btn-sm px-3 fw-bold">Sign Up</a>
                     </div>
                 </div>
             </div>
@@ -73,7 +74,7 @@
                                     class="btn btn-danger btn-lg px-5 fw-bold shadow-sm btn-pokemon">
                                     EXPLORAR CARTAS
                                 </a>
-                                <a href="/views/pages/juegos.html" class="btn btn-outline-light btn-lg px-5 fw-bold">
+                                <a href="./views/pages/juegos.html" class="btn btn-outline-light btn-lg px-5 fw-bold">
                                     VER JUEGOS
                                 </a>
                             </div>
@@ -143,7 +144,9 @@
 
                     <header class="text-center position-absolute top-0 mt-5 w-100">
                         <h1 class="display-3 fw-bold text-uppercase text-white">
-                            Descubre <span class="text-danger">CARTAS</span>
+                            <a href="./views/pages/cartas.html" class="text-decoration-none text-inherit">
+                                Descubre <span class="text-danger">CARTAS</span>
+                            </a>
                         </h1>
                         <p class="text-secondary tracking-widest">DESLIZA PARA GIRAR • EXPLORA EL UNIVERSO</p>
                     </header>
@@ -177,7 +180,9 @@
                     <div class="text-center mb-5">
                         <h2 class="display-4 fw-bold text-white text-uppercase"
                             style="font-family: 'Orbitron', sans-serif; text-shadow: 0 0 15px var(--accent-color);">
-                            Juegos <span style="color: var(--accent-color);"> Destascados</span>
+                            <a href="./views/pages/juegos.html" class="text-decoration-none text-white">
+                                Juegos <span style="color: var(--accent-color);"> Destacados</span>
+                            </a>
                         </h2>
                         <p class="text-secondary tracking-widest">REVIVE LAS AVENTURAS CLÁSICAS</p>
                     </div>
@@ -236,111 +241,128 @@
 
                     <div class="row mb-5 text-center text-white">
                         <div class="col-12">
-                            <h2 class="display-4 fw-bold text-uppercase m-0"
-                                style="font-family: 'Orbitron', sans-serif;">
-                                Comunidad
-                            </h2>
+                            <a href="./views/pages/comunidad/comunidad-principal.html"
+                                class="text-decoration-none text-white">
+                                <h2 class="display-4 fw-bold text-uppercase m-0"
+                                    style="font-family: 'Orbitron', sans-serif;">
+                                    Comunidad
+                                </h2>
+                            </a>
                             <p class="text-info tracking-widest text-uppercase fw-bold mt-2">Conecta con tu equipo</p>
                         </div>
                     </div>
 
                     <div class="row g-4">
+
                         <div class="col-12 col-lg-4">
-                            <div
-                                class="card h-100 bg-black bg-opacity-50 border-warning border-opacity-25 text-white shadow">
+                            <a href="./views/pages/comunidad/eventos.html" class="text-decoration-none d-block h-100">
                                 <div
-                                    class="card-header bg-warning text-dark fw-bold d-flex justify-content-between align-items-center">
-                                    <span><i class="bi bi-calendar-event-fill me-2"></i>EVENTS</span>
-                                    <span class="badge bg-dark">4 NUEVOS</span>
-                                </div>
-                                <div class="card-body p-0">
-                                    <div class="list-group list-group-flush">
-                                        <div
-                                            class="list-group-item bg-transparent text-white border-secondary border-opacity-25 py-2">
-                                            <h6 class="mb-0 text-warning small fw-bold">Online Tournament - Oct 20</h6>
-                                            <small class="opacity-75">tournament and meetups</small>
-                                        </div>
-                                        <div
-                                            class="list-group-item bg-transparent text-white border-secondary border-opacity-25 py-2">
-                                            <h6 class="mb-0 small fw-bold">Local Meetup (Kanto) - Nov 25</h6>
-                                            <small class="opacity-75">Kanto Region</small>
-                                        </div>
-                                        <div
-                                            class="list-group-item bg-transparent text-white border-secondary border-opacity-25 py-2">
-                                            <h6 class="mb-0 small fw-bold">Shiny Hunting Competition</h6>
-                                            <small class="opacity-75">Now 1</small>
+                                    class="card h-100 bg-black bg-opacity-50 border-warning border-opacity-25 text-white shadow">
+                                    <div
+                                        class="card-header bg-warning text-dark fw-bold d-flex justify-content-between align-items-center">
+                                        <span><i class="bi bi-calendar-event-fill me-2"></i>EVENTOS</span>
+                                        <span class="badge bg-dark">4 NUEVOS</span>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="list-group list-group-flush">
+                                            <div
+                                                class="list-group-item bg-transparent text-white border-secondary border-opacity-25 py-2">
+                                                <h6 class="mb-0 text-warning small fw-bold">Torneo Online - 20 Oct</h6>
+                                                <small class="opacity-75">Torneos y encuentros</small>
+                                            </div>
+                                            <div
+                                                class="list-group-item bg-transparent text-white border-secondary border-opacity-25 py-2">
+                                                <h6 class="mb-0 small fw-bold">Quedada Local (Kanto) - 25 Nov</h6>
+                                                <small class="opacity-75">Región de Kanto</small>
+                                            </div>
+                                            <div
+                                                class="list-group-item bg-transparent text-white border-secondary border-opacity-25 py-2">
+                                                <h6 class="mb-0 small fw-bold">Caza de Variocolores</h6>
+                                                <small class="opacity-75">¡Activo ahora!</small>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="card-footer bg-transparent border-0">
+                                        <span class="btn btn-sm btn-outline-warning w-100 rounded-pill mt-2">VER
+                                            CALENDARIO</span>
+                                    </div>
                                 </div>
-                                <div class="card-footer bg-transparent border-0">
-                                    <button class="btn btn-sm btn-outline-warning w-100 rounded-pill mt-2">VER
-                                        CALENDARIO</button>
-                                </div>
-                            </div>
+                            </a>
                         </div>
 
                         <div class="col-12 col-lg-4 text-center">
-                            <div
-                                class="card h-100 bg-black bg-opacity-50 border-info border-opacity-25 text-white shadow">
-                                <div class="card-header bg-info text-dark fw-bold">
-                                    <i class="bi bi-brush-fill me-2"></i>FAN ZONE
-                                </div>
-                                <div class="card-body">
-                                    <div class="row g-2 mb-3">
-                                        <div class="col-6">
-                                            <div class="p-2 border border-info border-opacity-25 rounded bg-dark"><i
-                                                    class="bi bi-water text-info fs-3"></i></div>
+                            <a href="./views/pages/comunidad/fan zone.html" class="text-decoration-none d-block h-100">
+                                <div
+                                    class="card h-100 bg-black bg-opacity-50 border-info border-opacity-25 text-white shadow">
+                                    <div class="card-header bg-info text-dark fw-bold">
+                                        <i class="bi bi-brush-fill me-2"></i>ZONA FAN
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row g-2 mb-3">
+                                            <div class="col-6">
+                                                <div class="p-2 border border-info border-opacity-25 rounded bg-dark"><i
+                                                        class="bi bi-water text-info fs-3"></i></div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="p-2 border border-danger border-opacity-25 rounded bg-dark">
+                                                    <i class="bi bi-fire text-danger fs-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div
+                                                    class="p-2 border border-success border-opacity-25 rounded bg-dark">
+                                                    <i class="bi bi-flower1 text-success fs-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div
+                                                    class="p-2 border border-warning border-opacity-25 rounded bg-dark">
+                                                    <i class="bi bi-lightning-fill text-warning fs-3"></i>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-6">
-                                            <div class="p-2 border border-danger border-opacity-25 rounded bg-dark"><i
-                                                    class="bi bi-fire text-danger fs-3"></i></div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="p-2 border border-success border-opacity-25 rounded bg-dark"><i
-                                                    class="bi bi-flower1 text-success fs-3"></i></div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="p-2 border border-warning border-opacity-25 rounded bg-dark"><i
-                                                    class="bi bi-lightning-fill text-warning fs-3"></i></div>
+                                        <span class="btn btn-sm btn-info w-100 rounded-pill fw-bold mb-2">¡ENVÍA TU
+                                            ARTE!</span>
+                                        <div class="d-flex gap-2">
+                                            <span class="btn btn-dark border-secondary btn-sm w-50 small"><i
+                                                    class="bi bi-camera"></i> Galería</span>
+                                            <span class="btn btn-dark border-secondary btn-sm w-50 small"><i
+                                                    class="bi bi-trophy"></i> Concursos</span>
                                         </div>
                                     </div>
-                                    <button class="btn btn-sm btn-info w-100 rounded-pill fw-bold mb-2">SUBMIT YOUR
-                                        ART!</button>
-                                    <div class="d-flex gap-2">
-                                        <button class="btn btn-dark border-secondary btn-sm w-50 small"><i
-                                                class="bi bi-camera"></i> Gallery</button>
-                                        <button class="btn btn-dark border-secondary btn-sm w-50 small"><i
-                                                class="bi bi-trophy"></i> Contest</button>
-                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
                         <div class="col-12 col-lg-4">
-                            <div class="card h-100 bg-black bg-opacity-50 border-danger border-opacity-25 text-white">
-                                <div class="card-header bg-danger text-white fw-bold">
-                                    <i class="bi bi-chat-dots-fill me-2"></i>FORUMS
-                                </div>
-                                <div class="card-body">
-                                    <div class="mb-2 p-2 border-start border-danger border-3 bg-dark bg-opacity-50">
-                                        <h6 class="mb-0 small fw-bold">Gen IX Starter Predictions</h6>
-                                        <small class="text-secondary">Sinnlona</small>
+                            <a href="./views/pages/comunidad/foros.html" class="text-decoration-none d-block h-100">
+                                <div
+                                    class="card h-100 bg-black bg-opacity-50 border-danger border-opacity-25 text-white shadow">
+                                    <div class="card-header bg-danger text-white fw-bold">
+                                        <i class="bi bi-chat-dots-fill me-2"></i>FOROS
                                     </div>
-                                    <div class="mb-2 p-2 border-start border-danger border-3 bg-dark bg-opacity-50">
-                                        <h6 class="mb-0 small fw-bold">Best Pokémon Game Ever?</h6>
-                                        <small class="text-secondary">Trading Tips & Tricks</small>
+                                    <div class="card-body">
+                                        <div class="mb-2 p-2 border-start border-danger border-3 bg-dark bg-opacity-50">
+                                            <h6 class="mb-0 small fw-bold">Predicciones Iniciales Gen IX</h6>
+                                            <small class="text-secondary">Sinnlona</small>
+                                        </div>
+                                        <div class="mb-2 p-2 border-start border-danger border-3 bg-dark bg-opacity-50">
+                                            <h6 class="mb-0 small fw-bold">¿Mejor juego de Pokémon?</h6>
+                                            <small class="text-secondary">Debates de la comunidad</small>
+                                        </div>
+                                        <div class="p-2 border-start border-danger border-3 bg-dark bg-opacity-50">
+                                            <h6 class="mb-0 small fw-bold">Trucos de Intercambio</h6>
+                                            <small class="text-secondary">Activo ahora</small>
+                                        </div>
                                     </div>
-                                    <div class="p-2 border-start border-danger border-3 bg-dark bg-opacity-50">
-                                        <h6 class="mb-0 small fw-bold">Trading Tips & Tricks</h6>
-                                        <small class="text-secondary">Active now</small>
+                                    <div class="card-footer bg-transparent border-0">
+                                        <span class="btn btn-sm btn-outline-danger w-100 rounded-pill mt-2">EXPLORAR
+                                            TEMAS</span>
                                     </div>
                                 </div>
-                                <div class="card-footer bg-transparent border-0">
-                                    <button class="btn btn-sm btn-outline-danger w-100 rounded-pill mt-2">EXPLORAR
-                                        TEMAS</button>
-                                </div>
-                            </div>
+                            </a>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -374,19 +396,19 @@
                 <div class="col-6 col-md-2 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="200">
                     <h6 class="text-uppercase fw-bold mb-3 text-danger">Explora</h6>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="./index-logueado.html">Inicio</a></li>
                         <li><a href="./views/pages/cartas.html">Cards</a></li>
-                        <li><a href="#">Games</a></li>
-                        <li><a href="#">Community</a></li>
+                        <li><a href="./views/pages/juegos.html">Games</a></li>
+                        <li><a href="./views/pages/comunidad/comunidad-principal.html">Community</a></li>
                     </ul>
                 </div>
 
                 <div class="col-6 col-md-2 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="400">
                     <h6 class="text-uppercase fw-bold mb-3 text-danger">Support</h6>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#">Ayuda</a></li>
-                        <li><a href="#">Privacidad</a></li>
-                        <li><a href="#">Términos</a></li>
+                        <li><a href="./views/pages/support-legal/ayuda.html">Ayuda</a></li>
+                        <li><a href="./views/pages/support-legal/privacidad.html">Privacidad</a></li>
+                        <li><a href="./views/pages/support-legal/">Términos</a></li>
                     </ul>
                 </div>
 

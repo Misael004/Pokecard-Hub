@@ -1,12 +1,135 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
+/* --- ESTILO GENERAL DEL MAIN (FONDO HIELO) --- */
+.main-eventos-hielo {
+    /* Degradado glacial de cian claro a azul profundo */
+    background: linear-gradient(180deg, #b2ebf2 0%, #01579b 100%) !important;
+    min-height: 100vh;
 }
 
-.content-wrapper {
-    position: relative;
-    z-index: 2;
-    background: white;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+/* --- CABECERA (Corrección de Visibilidad del Título) --- */
+.header-visible {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido muy suave */
+    border-radius: 15px;
+    backdrop-filter: blur(5px); /* Efecto cristal esmerilado */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.titulo-principal-helado {
+    /* Color azul oscuro profundo para contraste total */
+    color: #012d50 !important; 
+    /* Sombra de texto blanca para dar efecto de relieve helado y mejorar legibilidad */
+    text-shadow: 
+        -1px -1px 0 #fff,  
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff,
+         0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.subtitulo-hielo {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* --- TARJETAS ESTILO CRISTAL DE HIELO --- */
+.card-hielo {
+    /* Fondo blanco casi opaco para lectura clara */
+    background: rgba(255, 255, 255, 0.95); 
+    border-radius: 20px;
+    /* Borde blanco puro que simula nieve o hielo cristalino */
+    border: 3px solid #ffffff !important; 
+    transition: all 0.3s ease-in-out;
+}
+
+.card-hielo:hover {
+    transform: translateY(-8px);
+    /* Sombra cian brillante al pasar el ratón (efecto energético) */
+    box-shadow: 0 15px 30px rgba(0, 229, 255, 0.5) !important; 
+}
+
+.card-hielo-header {
+    /* Degradado azul eléctrico/agua */
+    background: linear-gradient(90deg, #0288d1, #26c6da) !important;
+    color: white !important;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 17px 17px 0 0;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-hielo-body {
+    padding: 20px;
+}
+
+/* Evento Destacado (Oscuro para contraste) */
+.destacado-glacial {
+    /* Degradado azul cian a azul noche */
+    background: linear-gradient(135deg, #00e5ff, #002f5a) !important;
+    border: 3px solid #b2ebf2 !important;
+}
+.destacado-glacial .card-hielo-header {
+    background: linear-gradient(90deg, #00acc1, #00e5ff) !important;
+}
+.destacado-glacial .card-hielo-body { color: white; }
+
+/* --- NUEVOS BOTONES (Rojo y Amarillo Estilo Fuego/Eléctrico) --- */
+.btn-poke-fuego {
+    /* Gradiente Rojo Intenso */
+    background: linear-gradient(45deg, #d32f2f, #f44336) !important;
+    /* Texto Amarillo Eléctrico */
+    color: #ffeb3b !important; 
+    border-radius: 50px;
+    border: 2px solid #ffeb3b; /* Borde amarillo */
+    padding: 12px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.4);
+}
+
+.btn-poke-fuego:hover {
+    /* Invierte a Amarillo Eléctrico con texto rojo al pasar el ratón */
+    background: linear-gradient(45deg, #ffeb3b, #fbc02d) !important;
+    color: #d32f2f !important;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 235, 59, 0.6);
+}
+
+/* Botón especial para tarjeta oscura (contraste invertido) */
+.btn-poke-fuego-destacado {
+    background: linear-gradient(45deg, #ffeb3b, #fbc02d) !important;
+    color: #d32f2f !important;
+    border-radius: 50px;
+    border: 2px solid #d32f2f;
+    padding: 12px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-poke-fuego-destacado:hover {
+    background: linear-gradient(45deg, #f44336, #b71c1c) !important;
+    color: #ffeb3b !important;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(244, 67, 54, 0.6);
+}
+
+/* --- GIF SQUIRTLE/GLACEON (Se mantiene animación) --- */
+.glaceon-container {
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+.glaceon-gif {
+    width: 65px;
+    /* Aura blanca brillante */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9)); 
+    animation: floatAnimHielo 3s ease-in-out infinite;
+}
+
+@keyframes floatAnimHielo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }

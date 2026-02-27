@@ -1,0 +1,89 @@
+/* --- ESTILOS PARA EL MAIN ELÉCTRICO (ESTÁTICO) --- */
+
+main {
+    /* Fondo amarillo sólido con un degradado suave hacia los bordes */
+    background: radial-gradient(circle, #fff9c4 0%, #fbc02d 100%) !important;
+    position: relative;
+    overflow: hidden;
+    /* Aseguramos que ocupe todo el espacio disponible */
+    min-height: 80vh; 
+}
+
+/* Efecto de rayos estáticos de fondo */
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Rayos sutiles en diagonal que no se mueven */
+    background-image: 
+        linear-gradient(120deg, transparent 40%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0.3) 50%, transparent 55%),
+        linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.2) 45%, rgba(255, 255, 255, 0.2) 50%, transparent 55%);
+    background-size: 400px 400px;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Ajustes a la Card para que resalte sobre el amarillo */
+main .card {
+    background-color: rgba(255, 255, 255, 0.95); /* Menos transparencia para mejor lectura */
+    border: 3px solid #fdd835 !important; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Solo un pequeño levantamiento al pasar el ratón */
+main .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(251, 192, 45, 0.4) !important;
+}
+
+/* El círculo del icono ahora es estático */
+main .bg-danger.rounded-circle {
+    background-color: #ff1744 !important;
+    box-shadow: 0 0 15px rgba(251, 192, 45, 0.5);
+}
+
+/* Inputs con foco amarillo */
+main .form-control:focus {
+    border-color: #fbc02d !important;
+    box-shadow: 0 0 0 0.25rem rgba(251, 192, 45, 0.25) !important;
+    background-color: #fff;
+}
+
+/* El botón mantiene tus clases pero le damos un brillo estático */
+.btn-pokemon {
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3) !important;
+}
+
+/* Contenedor del GIF */
+.pikachu-side {
+    position: absolute;
+    /* Esto lo saca del flujo y lo pone a la derecha del formulario */
+    left: 105%; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px; /* Tamaño del Pikachu */
+    z-index: 1;
+}
+
+.pikachu-gif {
+    width: 100%;
+    height: auto;
+    /* Invertimos para que mire al formulario */
+    transform: scaleX(-1);
+    /* Sombra suave para que no parezca pegado */
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.1));
+}
+
+/* Efecto opcional para que no sea estático */
+.pikachu-side {
+    animation: bounceRight 3s ease-in-out infinite;
+}
+
+@keyframes bounceRight {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(10px); }
+}
